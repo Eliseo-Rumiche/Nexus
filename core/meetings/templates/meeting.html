@@ -1,0 +1,70 @@
+{% extends "layouts/list.html" %}
+
+{% block rows %}
+    <th>id</th>
+    <th>Nombre</th>
+    <th>Tipo</th>
+    <th>Estado</th>
+    <th>Opciones</th>
+
+{% endblock rows %}
+
+{% block columns %}
+
+{% for meeting in meetings  %}
+
+<tr>
+    <td>{{meeting.pk}}</td>
+    <td>{{ meeting.name}}</td>
+    <td>
+        {% if meeting.type == 'A' %}
+        Área
+        {% elif meeting.type == 'G'   %}
+        Géneral
+        {% else %}
+        Directivos
+        {% endif %}
+    </td>
+
+
+    <td>
+        {% if meeting.status %}
+        <span class="badge bg-label-success me-1">Activo</span>
+        {% else %}
+        <span class="badge bg-label-danger me-1">Inactivo</span>
+        {% endif %}
+    </td>
+        
+        
+        
+    <td>
+
+      <a type="button" href="{% url "attendance" meeting.pk%}" class="btn btn-icon btn-primary text-white" data-id="{{meeting.pk}}">
+        <span class="tf-icons bx  bx-list-check"></span> 
+      </a>
+
+          <button type="button" class="btn btn-icon btn-info btn-edit" data-id="{{meeting.pk}}">
+            <span class="tf-icons bx bxs-edit"></span>
+          </button>
+
+          {% if meeting.status %}
+
+          <button type="button" class="btn btn-icon btn-warning btn-active_disactive"  data-id="{{meeting.pk}}">
+            <span class="tf-icons bx  bx-x "></span>
+          </button>
+
+          {% else %}
+          <button type="button" class="btn btn-icon btn-danger btn-active_disactive"  data-id="{{meeting.pk}}">
+            <span class="tf-icons bx bx-check"></span>
+          </button>
+
+          {% endif %}
+
+          <button type="button" class="btn btn-icon btn-primary btn-deleted" data-id="{{meeting.pk}}">
+            <span class="tf-icons bx bxs-trash"></span>
+          </button>
+    </td>
+  </tr>
+{% endfor %}
+
+{% endblock columns %}

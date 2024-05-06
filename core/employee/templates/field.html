@@ -1,0 +1,55 @@
+{% extends "layouts/list.html" %}
+
+{% block rows %}
+    <th>id</th>
+    <th>Nombre</th>
+    <th>Estado</th>
+    <th>Opciones</th>
+
+{% endblock rows %}
+
+{% block columns %}
+
+{% for field in fields  %}
+
+<tr>
+    <td>{{field.pk}}</td>
+    <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>{{ field.name}}</strong></td>
+
+
+    <td>
+        {% if field.status %}
+        <span class="badge bg-label-success me-1">Activo</span>
+        {% else %}
+        <span class="badge bg-label-danger me-1">Inactivo</span>
+        {% endif %}
+    </td>
+        
+        
+        
+    <td>
+          <button type="button" class="btn btn-icon btn-info btn-edit" data-id="{{field.pk}}">
+            <span class="tf-icons bx bxs-edit"></span>
+          </button>
+
+          {% if field.status %}
+
+          <button type="button" class="btn btn-icon btn-warning btn-active_disactive"  data-id="{{field.pk}}">
+            <span class="tf-icons bx  bx-x "></span>
+          </button>
+
+          {% else %}
+          <button type="button" class="btn btn-icon btn-danger btn-active_disactive"  data-id="{{field.pk}}">
+            <span class="tf-icons bx bx-check"></span>
+          </button>
+
+          {% endif %}
+
+          <button type="button" class="btn btn-icon btn-primary btn-deleted" data-id="{{field.pk}}">
+            <span class="tf-icons bx bxs-trash"></span>
+          </button>
+    </td>
+  </tr>
+{% endfor %}
+
+{% endblock columns %}

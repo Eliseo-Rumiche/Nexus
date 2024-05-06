@@ -1,0 +1,50 @@
+{% extends "layouts/base.html" %}
+
+{% block content %}
+
+<!-- Responsive Table -->
+<div class="card p-3">
+    <h5 class="card-header p-0 my-3">Asistencias</h5>
+   
+    <div class="table-responsive text-nowrap">
+      <table class="table" id="table">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Presente</th>
+            <th>Falta</th>
+            <th>Justificado</th>
+          </tr>
+        </thead>
+  
+        <tbody>
+         {% for attendance in attendances %}
+         <tr>
+            <th>{{attendance.worker.name}} {{attendance.worker.last_name}}</th>
+            <th>
+                <label for="attendance-worker-{{attendance.worker.pk}}-present" class="btn bt-success">
+                    <i class='bx bx-check'></i>
+                    <input style="display:none;" type="radio" name="attendance-worker-{{attendance.worker.pk}}" id="attendance-worker-{{attendance.worker.pk}}-present"></th>
+                </label>
+            <th>
+                <label for="attendance-worker-{{attendance.worker.pk}}-absent">
+                <i class='bx bx-x' ></i> 
+                <input style="display:none;"  type="radio" name="attendance-worker-{{attendance.worker.pk}}" id="attendance-worker-{{attendance.worker.pk}}-absent">
+            </label>
+            </th>
+            <th> 
+                <label for="attendance-worker-{{attendance.worker.pk}}-excused">
+                    <i class='bx bxs-timer' ></i><input style="display:none;" type="radio" name="attendance-worker-{{attendance.worker.pk}}" id="attendance-worker-{{attendance.worker.pk}}-excused">
+                </label>
+            </th>
+
+         </tr>
+
+         {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <!--/ Responsive Table -->
+
+{% endblock content %}
