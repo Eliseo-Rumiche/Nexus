@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     
     "core.employee",
     "core.meetings",
+    "core.authentication",
     'crispy_forms',
     "crispy_bootstrap4"
 ]
@@ -127,6 +128,10 @@ STATIC_ROOT = BASE_DIR / "staticfiles/"
 STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
+
+LOGIN_URL = '/login/'
+LOGIN_REDIRECT_URL = '/meeting/'
+LOGOUT_REDIRECT_URL = '/login/'
 
 
 # Default primary key field type

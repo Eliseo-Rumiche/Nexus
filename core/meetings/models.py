@@ -1,6 +1,7 @@
 from django.db import models
 from core.employee.models import Worker, Field
 from django.forms import model_to_dict
+from django.urls import reverse
 
 # Create your models here.
 
@@ -39,13 +40,16 @@ class Meeting(models.Model):
     
     def toJson(self):
         return model_to_dict(self)
+    
+    def get_attendances_url(self):
+        return reverse("attendances", kwargs={"pk": self.pk})
 
 
 
 class Attendance(models.Model):
     meeting = models.ForeignKey(Meeting, verbose_name="Reunion", on_delete=models.CASCADE,related_name="attendances")
     worker = models.ForeignKey(Worker, verbose_name="Trabajador", on_delete=models.CASCADE)
-    status = models.BooleanField(verbose_name="estado",max_length=1,null=True,blank=True)
+    status = models.CharField(verbose_name="estado",max_length=1,null=True,blank=True)
     justification = models.CharField("justificacion", max_length=150)
 
     class Meta:
@@ -53,4 +57,4 @@ class Attendance(models.Model):
         verbose_name_plural = "Asistencias"
 
     def __str__(self):
-        return self.name
+        return f" A-{self.meeting}-{self.worker}"

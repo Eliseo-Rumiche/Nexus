@@ -15,8 +15,7 @@
                 <li class="nav-item navbar-dropdown dropdown-user dropdown">
                   <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
                     <div class="avatar avatar-online">
-                      <img src=" 'assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle'" />
-                    </div>
+                      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAAAXNSR0IArs4c6QAAAddJREFUWEfdmAEyRDEMhrMnwUlwEpwEJ7FOgpPgJPhMa16zbfp3X403MrOD0eZ9Tf6kebuzjdluYzz2b4BOzezazM7NjN/5vKVo8/PFzJ7TZygJoxG6M7PbgScA9/i1nn2SqUAXZvaQIiE5dosAu1EipgCRGmDWmhStHhAgAM20+yiFEdCsyNQO04RqAaGZp5lhUTXVAgIGKMWyNk6S6Ef2nfkH1IDUVLUqZ6Qiqbz9EqoG9CqW92VQxmrKOVQRJQ+kRocuDFBkatqLg3kgtcwJM+GOTO3qRcV5IPVUYS9JlOrhimh7IFU/SspUX4WOPNCHUudpzQxR42oaUOtuUiusWu3HamjpDDBS+J7mI7UxZh9hhFRRD2S2uzQUtVqqPkLLv5keR6xoIT5lOKM6ekbZ4yiPrX59HnGV6ZJO/eOndnVEaWMj1dUCqYHhL4pawTByuR7cO70wpv8D04KSLlcc0GV9tSA+HKjRybwtf9UDjg5o0ly8iFzUk6qN9dgRFlG33ruyXpgcWqI+SFU+RG/IV9rAaGMMJ4UeEOAKlKjvbw0WE6LfqACxJ6oUBWbqi+KyWtDFlTji5pv8V16lW52YLxswqulPvmxQ0rNqjaqhVQ8Z2bw5oE9sbHIlqeUz0gAAAABJRU5ErkJggg=="/>                    </div>
                   </a>
                   <ul class="dropdown-menu dropdown-menu-end">
                     <li>
@@ -24,7 +23,8 @@
                         <div class="d-flex">
                           <div class="flex-shrink-0 me-3">
                             <div class="avatar avatar-online">
-                              <img src="'assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
+                              <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAAAXNSR0IArs4c6QAAAddJREFUWEfdmAEyRDEMhrMnwUlwEpwEJ7FOgpPgJPhMa16zbfp3X403MrOD0eZ9Tf6kebuzjdluYzz2b4BOzezazM7NjN/5vKVo8/PFzJ7TZygJoxG6M7PbgScA9/i1nn2SqUAXZvaQIiE5dosAu1EipgCRGmDWmhStHhAgAM20+yiFEdCsyNQO04RqAaGZp5lhUTXVAgIGKMWyNk6S6Ef2nfkH1IDUVLUqZ6Qiqbz9EqoG9CqW92VQxmrKOVQRJQ+kRocuDFBkatqLg3kgtcwJM+GOTO3qRcV5IPVUYS9JlOrhimh7IFU/SspUX4WOPNCHUudpzQxR42oaUOtuUiusWu3HamjpDDBS+J7mI7UxZh9hhFRRD2S2uzQUtVqqPkLLv5keR6xoIT5lOKM6ekbZ4yiPrX59HnGV6ZJO/eOndnVEaWMj1dUCqYHhL4pawTByuR7cO70wpv8D04KSLlcc0GV9tSA+HKjRybwtf9UDjg5o0ly8iFzUk6qN9dgRFlG33ruyXpgcWqI+SFU+RG/IV9rAaGMMJ4UeEOAKlKjvbw0WE6LfqACxJ6oUBWbqi+KyWtDFlTji5pv8V16lW52YLxswqulPvmxQ0rNqjaqhVQ8Z2bw5oE9sbHIlqeUz0gAAAABJRU5ErkJggg=="/>
+                              {% comment %} <img src="'assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" /> {% endcomment %}
                             </div>
                           </div>
                           <div class="flex-grow-1">
@@ -44,28 +44,15 @@
                       </a>
                     </li>
                     <li>
-                      <a class="dropdown-item" href="#">
-                        <i class="bx bx-cog me-2"></i>
-                        <span class="align-middle">Settings</span>
-                      </a>
                     </li>
                     <li>
-                      <a class="dropdown-item" href="#">
-                        <span class="d-flex align-items-center align-middle">
-                          <i class="flex-shrink-0 bx bx-credit-card me-2"></i>
-                          <span class="flex-grow-1 align-middle">Billing</span>
-                          <span class="flex-shrink-0 badge badge-center rounded-pill bg-danger w-px-20 h-px-20">4</span>
-                        </span>
-                      </a>
-                    </li>
-                    <li>
-                      <div class="dropdown-divider"></div>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="auth-login-basic.html">
-                        <i class="bx bx-power-off me-2"></i>
-                        <span class="align-middle">Log Out</span>
-                      </a>
+                      <form method="post" action="{% url 'logout' %}">
+                        {% csrf_token %}
+                        <button class="dropdown-item"type="submit">
+                          <i class="bx bx-power-off me-2"></i>
+                          <span class="align-middle">Log Out</span>
+                        </button>
+                    </form>
                     </li>
                   </ul>
                 </li>

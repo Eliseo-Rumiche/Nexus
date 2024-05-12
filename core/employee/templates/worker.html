@@ -32,6 +32,10 @@
         
         
     <td>
+          <a type="button" class="btn btn-icon btn-primary btn-edit" href="{{worker.get_absolute_url}}">
+            <span class="tf-icons bx bx-info-circle"></span>
+          </a>
+
           <button type="button" class="btn btn-icon btn-info btn-edit" data-id="{{worker.pk}}">
             <span class="tf-icons bx bxs-edit"></span>
           </button>
@@ -43,13 +47,13 @@
           </button>
 
           {% else %}
-          <button type="button" class="btn btn-icon btn-danger btn-active_disactive"  data-id="{{worker.pk}}">
+          <button type="button" class="btn btn-icon btn-success btn-active_disactive"  data-id="{{worker.pk}}">
             <span class="tf-icons bx bx-check"></span>
           </button>
 
           {% endif %}
 
-          <button type="button" class="btn btn-icon btn-primary btn-deleted" data-id="{{worker.pk}}">
+          <button type="button" class="btn btn-icon btn-danger btn-deleted" data-id="{{worker.pk}}">
             <span class="tf-icons bx bxs-trash"></span>
           </button>
     </td>

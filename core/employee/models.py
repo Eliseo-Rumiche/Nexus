@@ -1,6 +1,6 @@
 from django.db import models
 from django.forms import model_to_dict
-
+from django.urls import reverse
 # Create your models here.
 
 status_choices = (
@@ -55,6 +55,12 @@ class Worker(models.Model):
 
     def toJson(self):
         return model_to_dict(self)
+    
+    def get_absolute_url(self):
+        return reverse("worker_detail", kwargs={"pk": self.pk})
+    
+    def get_fullname(self):
+        return f"{self.name} {self.last_name}"
     
     class Meta:
         verbose_name = "Trabajador"

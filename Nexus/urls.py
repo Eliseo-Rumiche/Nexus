@@ -17,21 +17,27 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path
-from core.employee.views.worker_views import WorkerView
+from core.employee.views.worker_views import WorkerView, WorkerDetailView
 from core.employee.views.position_views import PositionView
 from core.employee.views.field_views import FieldView
 from core.meetings.views.meeting_views import MeetingView
 from core.meetings.views.attendance_views import AttendanceView
+from core.authentication.views import Login, LogoutView, UserView
 from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
-    path("admin/", admin.site.urls),
+    # path("admin/", admin.site.urls),
     path("worker/", WorkerView.as_view(), name="worker"),
+    path("worker/<pk>", WorkerDetailView.as_view(), name="worker_detail"),
     path("position/", PositionView.as_view(), name="position"),
     path("field/", FieldView.as_view(), name="field"),
     path("meeting/", MeetingView.as_view(), name="meeting"),
-    path("attendance/<int:pk>", AttendanceView.as_view(), name="attendance"),
+    path("attendance/<int:pk>", AttendanceView.as_view(), name="attendances"),
+    
+    path("login/", Login.as_view(), name="Login"),
+    path("logout/", LogoutView.as_view(), name="logout"),
+    path("user/", UserView.as_view(), name="user"),
     
 ]
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

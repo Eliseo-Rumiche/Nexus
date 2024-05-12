@@ -1,50 +1,135 @@
-{% extends "layouts/base.html" %}
+{% extends "layouts/base.html" %} {% block head %}
+{% load static %}
 
-{% block content %}
+<link
+  rel="stylesheet"
+  href="https://cdn.datatables.net/2.0.6/css/dataTables.bootstrap4.css"
+/>
+
+
+<style>
+
+  input[type="radio"] + label.btn-absent {
+    background-color: #dd798388;
+  }
+
+  input[type="radio"]:checked + label.btn-absent {
+    background-color: #dc3545;
+  }
+
+  input[type="radio"] + label.btn-present {
+    background-color: #369c6c86;
+  }
+
+  input[type="radio"]:checked + label.btn-present {
+    background-color: #198754;
+  }
+
+  input[type="radio"] + label.btn-excused {
+    background-color: rgba(194, 171, 100, 0.486)
+  }
+
+  input[type="radio"]:checked + label.btn-excused {
+    background-color: #ffc107;
+  }
+</style>
+{% endblock head %} {% block content %}
 
 <!-- Responsive Table -->
 <div class="card p-3">
-    <h5 class="card-header p-0 my-3">Asistencias</h5>
-   
-    <div class="table-responsive text-nowrap">
-      <table class="table" id="table">
-        <thead>
-          <tr>
-            <th>Nombre</th>
-            <th>Presente</th>
-            <th>Falta</th>
-            <th>Justificado</th>
-          </tr>
-        </thead>
-  
-        <tbody>
-         {% for attendance in attendances %}
-         <tr>
-            <th>{{attendance.worker.name}} {{attendance.worker.last_name}}</th>
-            <th>
-                <label for="attendance-worker-{{attendance.worker.pk}}-present" class="btn bt-success">
-                    <i class='bx bx-check'></i>
-                    <input style="display:none;" type="radio" name="attendance-worker-{{attendance.worker.pk}}" id="attendance-worker-{{attendance.worker.pk}}-present"></th>
-                </label>
-            <th>
-                <label for="attendance-worker-{{attendance.worker.pk}}-absent">
-                <i class='bx bx-x' ></i> 
-                <input style="display:none;"  type="radio" name="attendance-worker-{{attendance.worker.pk}}" id="attendance-worker-{{attendance.worker.pk}}-absent">
-            </label>
-            </th>
-            <th> 
-                <label for="attendance-worker-{{attendance.worker.pk}}-excused">
-                    <i class='bx bxs-timer' ></i><input style="display:none;" type="radio" name="attendance-worker-{{attendance.worker.pk}}" id="attendance-worker-{{attendance.worker.pk}}-excused">
-                </label>
-            </th>
-
-         </tr>
-
-         {% endfor %}
-        </tbody>
-      </table>
-    </div>
+  <div class=" my-3">
+    <a type="button" href="{% url "meeting" %}" class="btn btn-secondary">
+      <i class='bx bx-left-arrow-alt'></i> Regresar
+    </a>
   </div>
-  <!--/ Responsive Table -->
+
+  {% comment %} <h5 class="card-header p-0 my-3">Asistencia : {{meeting.name}}</h5> {% endcomment %}
+  {% comment %} <h5 class="card-header p-0 my-3">Fecha : {{meeting.date}}</h5> {% endcomment %}
+
+  <div class="table-responsive text-nowrap">
+    <table class="table" id="table">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Presente</th>
+          <th>Falta</th>
+          <th>Justificado</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        {% for attendance in attendances %}
+        <tr>
+          <th>{{attendance.worker.name}} {{attendance.worker.last_name}}</th>
+          <th>
+            <input
+            {% if attendance.status == "P" %} checked{% endif %}
+              style="display: none"
+              type="radio"
+              name="attendance-worker-{{attendance.worker.pk}}"
+              id="attendance-worker-{{attendance.worker.pk}}-present"
+              data-worker={{attendance.worker.pk}}
+              Value="P"
+            />
+            <label
+              for="attendance-worker-{{attendance.worker.pk}}-present"
+              class="btn btn-present text-white"
+            >
+              <i class="bx bx-check"></i>
+            </label>
+          </th>
+
+          <th>
+            <input
+            {% if attendance.status == "A" %} checked{% endif %}
+              style="display: none"
+              type="radio"
+              name="attendance-worker-{{attendance.worker.pk}}"
+              id="attendance-worker-{{attendance.worker.pk}}-absent"
+              data-worker={{attendance.worker.pk}}
+              Value="A"
+            />
+            <label
+              for="attendance-worker-{{attendance.worker.pk}}-absent"
+              class="btn btn-absent text-white"
+            >
+              <i class="bx bx-x"></i>
+            </label>
+          </th>
+          <th>
+            <input
+            {% if attendance.status == "E" %} checked{% endif %}
+              style="display: none"
+              type="radio"
+              name="attendance-worker-{{attendance.worker.pk}}"
+              id="attendance-worker-{{attendance.worker.pk}}-excused"
+              data-worker={{attendance.worker.pk}}
+              Value="E"
+            />
+            <label
+              for="attendance-worker-{{attendance.worker.pk}}-excused"
+              class="btn btn-excused text-white"
+            >
+              <i class="bx bxs-timer"></i>
+            </label>
+          </th>
+        </tr>
+
+        {% endfor %}
+      </tbody>
+    </table>
+    
+  </div>
+</div>
+<!--/ Responsive Table -->
 
 {% endblock content %}
+
+{% block scripts %}
+<script type="module" src="{% static "js/attendance.js" %}"></script>
+<script src="https://cdn.datatables.net/2.0.6/js/dataTables.js"></script>
+<script src="https://cdn.datatables.net/2.0.6/js/dataTables.bootstrap4.js"></script>
+
+<script src="{% static 'js/list.js' %}" type="module" ></script>
+
+{% endblock scripts %} 

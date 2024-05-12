@@ -1,6 +1,7 @@
 from typing import Any
-from django.views.generic  import ListView
+from django.views.generic  import ListView, DetailView
 from core.employee.models import Worker
+from core.meetings.models import Attendance
 from core.employee.forms import WorkerForm
 from django.http.response import JsonResponse
 
@@ -56,5 +57,51 @@ class WorkerView(ListView):
         return context
     
 
+class WorkerDetailView(DetailView):
+    model=Worker
+    template_name = 'worker_detail.html'
     
+    def get_attendances(self):
+        return Attendance.objects.filter(worker = self.get_object())
+    
+    def get_present_attendances(self):
+        return self.get_attendances().filter(status = "P")
+    
+    def get_absent_attendances(self):
+        return self.get_attendances().filter(status = "A")
+    
+    def get_excused_attendances(self):
+        return self.get_attendances().filter(status = "E")
+    
+    def get_unmarked_attendance(self):
+        return self.get_attendances().filter(status = None)
+    
+    def get_chart_data(self):
+        total_attendances = self.get_attendances().count()
+        present_attendances = self.get_present_attendances().count()
+        absent_attendances  = self.get_absent_attendances().count()
+        excused_attendances = self.get_excused_attendances().count()
+        unmarked_attendaces = self.get_unmarked_attendance().count()
+        present_attendances =round((present_attendances *100)/ total_attendances,2)
+        absent_attendances = round((absent_attendances*100)/total_attendances,2)
+        excused_attendances = round((excused_attendances*100)/total_attendances,2)
+        unmarked_attendaces = round((unmarked_attendaces *100)/total_attendances,2)
+        
+        data = {
+            "labels": ['Presente', 'Ausente', 'Justificado', 'sin marcar'],
+            "series": [present_attendances, absent_attendances, excused_attendances, unmarked_attendaces],
+        }
+        return data
+    
+    def get_context_data(self, **kwargs: Any) -> dict[str, Any]:
+        context =  super().get_context_data(**kwargs)
+        context['total_attendances'] = self.get_attendances().count()
+        context['chart_data'] = self.get_chart_data()
+        context['present_attendances'] = self.get_present_attendances
+        context['absent_attendances'] = self.get_absent_attendances
+        context['excused_attendances'] = self.get_excused_attendances
+        context['unmarked_attendances'] = self.get_unmarked_attendance
+        context['last_attendances'] = self.get_attendances().order_by("-meeting__date")[:6]
+        return context
+        
     

@@ -39,7 +39,7 @@
         
     <td>
 
-      <a type="button" href="{% url "attendance" meeting.pk%}" class="btn btn-icon btn-primary text-white" data-id="{{meeting.pk}}">
+      <a type="button" href="{{meeting.get_attendances_url}}" class="btn btn-icon btn-primary text-white" data-id="{{meeting.pk}}">
         <span class="tf-icons bx  bx-list-check"></span> 
       </a>
 
