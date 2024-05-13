@@ -4,7 +4,7 @@
     <th>id</th>
     <th>Nombre</th>
     <th>Tipo</th>
-    <th>Estado</th>
+    <th>Fecha</th>
     <th>Opciones</th>
 
 {% endblock rows %}
@@ -28,39 +28,24 @@
 
 
     <td>
-        {% if meeting.status %}
-        <span class="badge bg-label-success me-1">Activo</span>
-        {% else %}
-        <span class="badge bg-label-danger me-1">Inactivo</span>
-        {% endif %}
+        {{meeting.date}}
     </td>
         
         
         
     <td>
 
+      {% if "meetings.view_attendance" in perms %}
       <a type="button" href="{{meeting.get_attendances_url}}" class="btn btn-icon btn-primary text-white" data-id="{{meeting.pk}}">
         <span class="tf-icons bx  bx-list-check"></span> 
       </a>
+      {% endif %}
 
           <button type="button" class="btn btn-icon btn-info btn-edit" data-id="{{meeting.pk}}">
             <span class="tf-icons bx bxs-edit"></span>
           </button>
 
-          {% if meeting.status %}
-
-          <button type="button" class="btn btn-icon btn-warning btn-active_disactive"  data-id="{{meeting.pk}}">
-            <span class="tf-icons bx  bx-x "></span>
-          </button>
-
-          {% else %}
-          <button type="button" class="btn btn-icon btn-danger btn-active_disactive"  data-id="{{meeting.pk}}">
-            <span class="tf-icons bx bx-check"></span>
-          </button>
-
-          {% endif %}
-
-          <button type="button" class="btn btn-icon btn-primary btn-deleted" data-id="{{meeting.pk}}">
+          <button type="button" class="btn btn-icon btn-danger btn-deleted" data-id="{{meeting.pk}}">
             <span class="tf-icons bx bxs-trash"></span>
           </button>
     </td>

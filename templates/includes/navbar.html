@@ -28,8 +28,8 @@
                             </div>
                           </div>
                           <div class="flex-grow-1">
-                            <span class="fw-semibold d-block">John Doe</span>
-                            <small class="text-muted">Admin</small>
+                            <span class="fw-semibold d-block">{{user}}</span>
+                            <small class="text-muted">{{user.get_full_name | truncatechars:22}}</small>
                           </div>
                         </div>
                       </a>
@@ -38,19 +38,13 @@
                       <div class="dropdown-divider"></div>
                     </li>
                     <li>
-                      <a class="dropdown-item" href="#">
-                        <i class="bx bx-user me-2"></i>
-                        <span class="align-middle">My Profile</span>
-                      </a>
-                    </li>
-                    <li>
                     </li>
                     <li>
                       <form method="post" action="{% url 'logout' %}">
                         {% csrf_token %}
                         <button class="dropdown-item"type="submit">
                           <i class="bx bx-power-off me-2"></i>
-                          <span class="align-middle">Log Out</span>
+                          <span class="align-middle">Cerrar Sesión</span>
                         </button>
                     </form>
                     </li>

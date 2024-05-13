@@ -57,9 +57,9 @@
             <div class="card-body">
               <!-- Logo -->
               <div class="app-brand justify-content-center">
-                <a href="index.html" class="app-brand-link gap-2">
-                  
-                  <span class="app-brand-text demo text-body fw-bolder">Sneat</span>
+                <a href="/" class="app-brand-link gap-2">
+                  <img width="25" src="{% static 'img/logo.svg' %}" >
+                  <span class="app-brand-text demo text-body fw-bolder">Nexus</span>
                 </a>
               </div>
               <!-- /Logo -->
@@ -116,5 +116,38 @@
 
 
     <script src="{% static 'assets/js/main.js'%}"></script>
+    <script src="
+    https://cdn.jsdelivr.net/npm/sweetalert2@11.10.8/dist/sweetalert2.all.min.js
+    "></script> 
+
+    <script>
+
+      {% if form.errors %}
+      let errors = ""
+
+        {% for field in form %}
+        
+          {% for error in field.errors %}
+            errors += "{{error}}\n"
+          {% endfor %}
+
+        {% endfor %}
+
+        {% for error in form.non_field_errors %}
+        errors += "{{error}}\n"
+        {% endfor %}
+
+
+        Swal.fire({
+          title: "Error",
+          text: errors,
+          icon: "error"
+        });
+
+      {% endif %}
+
+      
+
+    </script>
   </body>
 </html>

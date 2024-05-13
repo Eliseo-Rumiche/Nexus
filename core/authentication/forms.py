@@ -10,7 +10,7 @@ class UserForm(forms.ModelForm):
         permissions_choices = []
         permissions = Permission.objects.filter(
             Q(content_type__model='user') |
-            Q(content_type__app_label='meeting') |
+            Q(content_type__app_label='meetings') |
             Q(content_type__app_label='employee') 
         )
 

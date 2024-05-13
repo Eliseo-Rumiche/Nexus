@@ -35,27 +35,29 @@ class MeetingForm(forms.ModelForm):
             
         meeting: Meeting = super().save(commit=False)
         
-        if self.cleaned_data['type'] != meeting.type:
-            Attendance.objects.filter(meeting = meeting).delete()
-            
-        
         workers = Worker.objects.filter(status = True)
         if self.cleaned_data['type'] == "A":
             workers = workers.filter(field = self.cleaned_data['field'] )
             
         elif self.cleaned_data['type'] == "D":
-            workers = workers.filter(position__name_icontains="director")
+            workers = workers.filter(position__name__icontains="director")
         
         meeting.save()
         
-        for worker in workers:
-            attendance = Attendance()
-            attendance.meeting = meeting
-            attendance.worker = worker
-            attendance.save()
+        if self.cleaned_data['type'] != meeting.type:
+            Attendance.objects.filter(meeting = meeting).delete()    
+            for worker in workers:
+                attendance = Attendance()
+                attendance.meeting = meeting
+                attendance.worker = worker
+                attendance.save()
             
-            
-
         return meeting
 
+    def clean(self):
+        cleaned_data = super().clean()  
         
+        meeting_type = cleaned_data.get("type")
+        field = cleaned_data.get("field")
+        if meeting_type == "A" and field == None:
+            self.add_error('field', 'Selecione área.')

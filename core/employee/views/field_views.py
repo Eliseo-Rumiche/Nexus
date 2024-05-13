@@ -3,11 +3,14 @@ from django.views.generic  import ListView
 from core.employee.models import Field
 from core.employee.forms import FieldForm
 from django.http.response import JsonResponse
+from core.authentication.mixin import LoginRequiredMixin
+from core.authentication.utils import ValidatePermission
 
-class FieldView(ListView):
+class FieldView(LoginRequiredMixin,ListView):
     template_name = "field.html"
     model = Field
     context_object_name = "fields"
+    permission = "employee.view_field"
     
     
     def post(self, request):
@@ -16,22 +19,27 @@ class FieldView(ListView):
             action = request.POST["action"]
 
             if action == "active_disactive":
+                ValidatePermission("employee.change_field",request)
                 field = Field.objects.get(id=request.POST["id"])
                 field.status = not field.status
                 field.save()
 
             elif action == "detail":
+                ValidatePermission("employee.change_field",request)
                 field = Field.objects.get(id=request.POST["id"])
                 data["data"] = field.toJson()
                 
             elif action == "deleted":
+                ValidatePermission("employee.delete_field",request)
                 field = Field.objects.get(id=request.POST["id"])
                 field.delete()
 
             elif action in ["add", "edit"]:
                 if action == "add":
+                    ValidatePermission("employee.add_field",request)
                     form = FieldForm(request.POST)
                 else:
+                    ValidatePermission("employee.change_field",request)
                     instance = Field.objects.get(id=request.POST["id"])
                     form = FieldForm(request.POST, instance=instance)
 

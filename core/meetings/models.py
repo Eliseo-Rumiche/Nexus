@@ -5,11 +5,6 @@ from django.urls import reverse
 
 # Create your models here.
 
-status_choices = (
-    ('T', "Terminada"),
-    ("EC", 'En Curso'),  
-)
-
 meeting_type_choices  = (
     ('G', 'Generales'),
     ('A', 'Área'),
@@ -29,7 +24,6 @@ class Meeting(models.Model):
         blank=True
         )
     date = models.DateField("Fecha", auto_now=False, auto_now_add=False)
-    status = models.CharField('Estado', max_length=2, choices=status_choices)
     
     class Meta:
         verbose_name = 'Reunion'
