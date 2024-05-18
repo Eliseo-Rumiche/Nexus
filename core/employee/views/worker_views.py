@@ -90,10 +90,11 @@ class WorkerDetailView(LoginRequiredMixin, DetailView):
         absent_attendances = self.get_absent_attendances().count()
         excused_attendances = self.get_excused_attendances().count()
         unmarked_attendaces = self.get_unmarked_attendance().count()
-        present_attendances = round((present_attendances * 100) / total_attendances, 2)
-        absent_attendances = round((absent_attendances * 100) / total_attendances, 2)
-        excused_attendances = round((excused_attendances * 100) / total_attendances, 2)
-        unmarked_attendaces = round((unmarked_attendaces * 100) / total_attendances, 2)
+        if total_attendances > 0:
+            present_attendances = round((present_attendances * 100) / total_attendances)
+            absent_attendances = round((absent_attendances * 100) / total_attendances)
+            excused_attendances = round((excused_attendances * 100) / total_attendances)
+            unmarked_attendaces = round((unmarked_attendaces * 100) / total_attendances)
 
         data = {
             "labels": ["Presente", "Ausente", "Justificado", "sin marcar"],

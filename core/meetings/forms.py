@@ -34,7 +34,6 @@ class MeetingForm(forms.ModelForm):
             return meeting
             
         meeting: Meeting = super().save(commit=False)
-        
         workers = Worker.objects.filter(status = True)
         if self.cleaned_data['type'] == "A":
             workers = workers.filter(field = self.cleaned_data['field'] )
@@ -42,15 +41,25 @@ class MeetingForm(forms.ModelForm):
         elif self.cleaned_data['type'] == "D":
             workers = workers.filter(position__name__icontains="director")
         
-        meeting.save()
+        if meeting.pk is not None:
+            
+            meet = Meeting.objects.get(pk = meeting.pk)
+            if meet.type == "A" and meeting.type =="A" and meet.field == meeting.field:
+                meeting.save()
+                return meeting
+            
+            if meet.type == meeting.type and meeting.type != "A":
+                meeting.save()
+                return meeting
+            
         
-        if self.cleaned_data['type'] != meeting.type:
-            Attendance.objects.filter(meeting = meeting).delete()    
-            for worker in workers:
-                attendance = Attendance()
-                attendance.meeting = meeting
-                attendance.worker = worker
-                attendance.save()
+        meeting.save()
+        Attendance.objects.filter(meeting = meeting).delete()    
+        for worker in workers:
+            attendance = Attendance()
+            attendance.meeting = meeting
+            attendance.worker = worker
+            attendance.save()
             
         return meeting
 
