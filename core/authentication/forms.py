@@ -6,6 +6,11 @@ class UserForm(forms.ModelForm):
     
     def __init__(self, *args, **kargs):
         super().__init__(*args, **kargs)
+        
+        self.fields['first_name'].required = True
+        self.fields['last_name'].required = True
+        self.fields['email'].required = True
+
 
         permissions_choices = []
         permissions = Permission.objects.filter(
@@ -36,7 +41,7 @@ class UserForm(forms.ModelForm):
 
     class Meta:
         model = User
-        fields = ("username",'first_name','last_name', "email","password", "user_permissions")
+        fields = ('first_name','last_name', "email","password", "user_permissions")
         labels = {
             "username": "Nombre De Usuario",
             "first_name" : "Nombre",
@@ -53,6 +58,7 @@ class UserForm(forms.ModelForm):
         help_texts = {
             "user_permissions" :"Permisos específicos para este usuario."
         }
+
         
     def save(self, commit=True):
         data = self.data or {}
@@ -63,6 +69,8 @@ class UserForm(forms.ModelForm):
                 u = form.save(commit=False)
                 psw = self.cleaned_data.get("password")
 
+                u.username = self.cleaned_data.get("first_name") +" "+ self.cleaned_data.get("last_name")
+                
                 if u.pk is None:
                     u.set_password(psw)
 

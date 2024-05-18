@@ -14,7 +14,7 @@
 {% for meeting in meetings  %}
 
 <tr>
-    <td>{{meeting.pk}}</td>
+    <td>{{forloop.counter}}</td>
     <td>{{ meeting.name}}</td>
     <td>
         {% if meeting.type == 'A' %}
