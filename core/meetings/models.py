@@ -12,7 +12,8 @@ meeting_type_choices  = (
 )
 
 class Meeting(models.Model):
-    name = models.CharField('Nombre', max_length=50)
+    name = models.CharField('Tema', max_length=50)
+    organizer = models.ForeignKey(Worker, verbose_name="Organizador", on_delete=models.PROTECT)
     link = models.URLField('link', max_length=200)
     type = models.CharField("Tipo de reunión", max_length=1, choices=meeting_type_choices)
     field = models.ForeignKey(
@@ -23,7 +24,7 @@ class Meeting(models.Model):
         help_text="Seleccionar para reunión por área",
         blank=True
         )
-    date = models.DateField("Fecha", auto_now=False, auto_now_add=False)
+    date = models.DateTimeField("Fecha", auto_now=False, auto_now_add=False)
     
     class Meta:
         verbose_name = 'Reunion'

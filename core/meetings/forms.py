@@ -1,72 +1,78 @@
 from django import forms
 from core.meetings.models import Meeting, Attendance
 from core.employee.models import Worker
+from core.meetings.utils import send_meeting_notification_by_email
 
 select_choices = (
-    (0, 'No'),
-    (1, 'Si'),
+    (0, "No"),
+    (1, "Si"),
 )
 
-class DateInput(forms.DateInput):
-    input_type = 'date'
-       
-    
-    
+
+class DateTimeInput(forms.DateInput):
+    input_type = "datetime-local"
+
+
 class MeetingForm(forms.ModelForm):
-    
-    
+
     send_notification = forms.BooleanField(
         required=False,
         widget=forms.Select(choices=select_choices),
-        label="Enviar Notificación (Whatsapp)",
-        help_text="Proximamente ...."
+        label="Enviar Notificación (Email)",
+        help_text="",
+    )
+    organizer = forms.ModelChoiceField(
+        label="Organizador",
+        queryset=Worker.objects.filter(
+            position__name__icontains="director", status=True
         )
-    
+    )
+
     class Meta:
         model = Meeting
         fields = "__all__"
-        widgets = {
-            'date': DateInput
-        }
+        widgets = {"date": DateTimeInput}
 
     def save(self, commit=True):
         if not commit:
             return meeting
-            
+
         meeting: Meeting = super().save(commit=False)
-        workers = Worker.objects.filter(status = True)
-        if self.cleaned_data['type'] == "A":
-            workers = workers.filter(field = self.cleaned_data['field'] )
-            
-        elif self.cleaned_data['type'] == "D":
+        workers = Worker.objects.filter(status=True)
+        if self.cleaned_data["type"] == "A":
+            workers = workers.filter(field=self.cleaned_data["field"])
+
+        elif self.cleaned_data["type"] == "D":
             workers = workers.filter(position__name__icontains="director")
-        
+
         if meeting.pk is not None:
-            
-            meet = Meeting.objects.get(pk = meeting.pk)
-            if meet.type == "A" and meeting.type =="A" and meet.field == meeting.field:
+
+            meet = Meeting.objects.get(pk=meeting.pk)
+            if meet.type == "A" and meeting.type == "A" and meet.field == meeting.field:
                 meeting.save()
                 return meeting
-            
+
             if meet.type == meeting.type and meeting.type != "A":
                 meeting.save()
                 return meeting
-            
-        
+
         meeting.save()
-        Attendance.objects.filter(meeting = meeting).delete()    
+        Attendance.objects.filter(meeting=meeting).delete()
         for worker in workers:
             attendance = Attendance()
             attendance.meeting = meeting
             attendance.worker = worker
             attendance.save()
-            
+
+            if self.cleaned_data["send_notification"]:
+                send_meeting_notification_by_email(attendance)
+
         return meeting
 
     def clean(self):
-        cleaned_data = super().clean()  
-        
+        cleaned_data = super().clean()
+
         meeting_type = cleaned_data.get("type")
         field = cleaned_data.get("field")
         if meeting_type == "A" and field == None:
-            self.add_error('field', 'Selecione área.')
+            self.add_error("field", "Selecione área.")

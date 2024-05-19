@@ -1,0 +1,386 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office"><head><meta name="__cloudhq_email_draft_json" content="eyJjb3VudGVycyI6eyJ1X3JvdyI6MTcsInVfY29sdW1uIjoyMSwidV9jb250ZW50X3RleHQiOjgsInVfY29udGVudF9pbWFnZSI6MjgsInVfY29udGVudF9idXR0b24iOjEsInVfY29udGVudF9zb2NpYWwiOjMsInVfY29udGVudF92aWRlbyI6MSwidV9jb250ZW50X2hlYWRpbmciOjI2LCJ1X2NvbnRlbnRfaHRtbCI6MSwidV9jb250ZW50X2RpdmlkZXIiOjF9LCJib2R5Ijp7ImlkIjoiY0NjUGthWFJqeSIsInJvd3MiOlt7ImlkIjoib2g0TDh4ekF4YSIsImNlbGxzIjpbMV0sImNvbHVtbnMiOlt7ImlkIjoiR2hUZUN1ZlVCXyIsImNvbnRlbnRzIjpbeyJpZCI6IkpIQ1M5M1NJbjQiLCJ0eXBlIjoiaGVhZGluZyIsInZhbHVlcyI6eyJjb250YWluZXJQYWRkaW5nIjoiMjhweCAxMHB4IDEwcHgiLCJhbmNob3IiOiIiLCJoZWFkaW5nVHlwZSI6ImgxIiwiZm9udEZhbWlseSI6eyJsYWJlbCI6IkJvb2sgQW50aXF1YSIsInZhbHVlIjoiYm9vayBhbnRpcXVhLHBhbGF0aW5vIiwidXJsIjoiIiwiZGVmYXVsdEZvbnQiOnRydWUsIndlaWdodHMiOm51bGx9LCJmb250V2VpZ2h0Ijo3MDAsImZvbnRTaXplIjoiMTlweCIsImNvbG9yIjoiI2ZmZmZmZiIsInRleHRBbGlnbiI6ImNlbnRlciIsImxpbmVIZWlnaHQiOiIxNDAlIiwibGlua1N0eWxlIjp7ImluaGVyaXQiOnRydWUsImxpbmtDb2xvciI6IiMwMDAwZWUiLCJsaW5rSG92ZXJDb2xvciI6IiMwMDAwZWUiLCJsaW5rVW5kZXJsaW5lIjp0cnVlLCJsaW5rSG92ZXJVbmRlcmxpbmUiOnRydWV9LCJoaWRlRGVza3RvcCI6ZmFsc2UsImRpc3BsYXlDb25kaXRpb24iOm51bGwsIl9tZXRhIjp7Imh0bWxJRCI6InVfY29udGVudF9oZWFkaW5nXzIyIiwiaHRtbENsYXNzTmFtZXMiOiJ1X2NvbnRlbnRfaGVhZGluZyJ9LCJzZWxlY3RhYmxlIjp0cnVlLCJkcmFnZ2FibGUiOnRydWUsImR1cGxpY2F0YWJsZSI6dHJ1ZSwiZGVsZXRhYmxlIjp0cnVlLCJoaWRlYWJsZSI6dHJ1ZSwidGV4dCI6IjxkaXY+XG48ZGl2PlxuPGRpdj5cbjxkaXY+XG48ZGl2IGRhdGEtdGVzdGlkPVwiY29udmVyc2F0aW9uLXR1cm4tMTdcIj5cbjxkaXY+XG48ZGl2PlxuPGRpdj5cbjxkaXY+XG48ZGl2PlxuPGRpdiBkYXRhLW1lc3NhZ2UtYXV0aG9yLXJvbGU9XCJhc3Npc3RhbnRcIiBkYXRhLW1lc3NhZ2UtaWQ9XCJiMmI5MjNkMy0yMWM2LTRlOWUtYWIyYi1kM2E2MTM3MGI3ZjFcIj5cbjxkaXY+XG48cCBzdHlsZT1cImxpbmUtaGVpZ2h0OiAxNDAlO1wiPk5FWFVTIEFDQURFTVk8L3A+XG48L2Rpdj5cbjwvZGl2PlxuPC9kaXY+XG48L2Rpdj5cbjwvZGl2PlxuPC9kaXY+XG48L2Rpdj5cbjwvZGl2PlxuPC9kaXY+XG48L2Rpdj5cbjwvZGl2PlxuPC9kaXY+IiwiX292ZXJyaWRlIjp7Im1vYmlsZSI6eyJmb250U2l6ZSI6IjE2cHgiLCJjb250YWluZXJQYWRkaW5nIjoiMjFweCA1cHggMTBweCJ9fX19LHsiaWQiOiJJZlZoTEQwN0YwIiwidHlwZSI6ImhlYWRpbmciLCJ2YWx1ZXMiOnsiY29udGFpbmVyUGFkZGluZyI6IjBweCAxMHB4IDEwcHgiLCJhbmNob3IiOiIiLCJoZWFkaW5nVHlwZSI6ImgxIiwiZm9udEZhbWlseSI6eyJsYWJlbCI6Ik9wZW4gU2FucyIsInZhbHVlIjoiJ09wZW4gU2Fucycsc2Fucy1zZXJpZiIsInVybCI6Imh0dHBzOi8vZm9udHMuZ29vZ2xlYXBpcy5jb20vY3NzP2ZhbWlseT1PcGVuK1NhbnM6NDAwLDcwMCIsImRlZmF1bHRGb250Ijp0cnVlLCJ3ZWlnaHRzIjpudWxsfSwiZm9udFdlaWdodCI6NDAwLCJmb250U2l6ZSI6IjEwcHgiLCJjb2xvciI6IiNmZmZmZmYiLCJ0ZXh0QWxpZ24iOiJjZW50ZXIiLCJsaW5lSGVpZ2h0IjoiMTQwJSIsImxpbmtTdHlsZSI6eyJpbmhlcml0Ijp0cnVlLCJsaW5rQ29sb3IiOiIjMDAwMGVlIiwibGlua0hvdmVyQ29sb3IiOiIjMDAwMGVlIiwibGlua1VuZGVybGluZSI6dHJ1ZSwibGlua0hvdmVyVW5kZXJsaW5lIjp0cnVlfSwiaGlkZURlc2t0b3AiOmZhbHNlLCJkaXNwbGF5Q29uZGl0aW9uIjpudWxsLCJfbWV0YSI6eyJodG1sSUQiOiJ1X2NvbnRlbnRfaGVhZGluZ18xNSIsImh0bWxDbGFzc05hbWVzIjoidV9jb250ZW50X2hlYWRpbmcifSwic2VsZWN0YWJsZSI6dHJ1ZSwiZHJhZ2dhYmxlIjp0cnVlLCJkdXBsaWNhdGFibGUiOnRydWUsImRlbGV0YWJsZSI6dHJ1ZSwiaGlkZWFibGUiOnRydWUsInRleHQiOiI8c3Bhbj48c3Bhbj48L3NwYW4+PC9zcGFuPiIsIl9vdmVycmlkZSI6eyJtb2JpbGUiOnsiZm9udFNpemUiOiIxNHB4In19fX1dLCJ2YWx1ZXMiOnsiYmFja2dyb3VuZENvbG9yIjoiIiwicGFkZGluZyI6IjBweCIsImJvcmRlciI6e30sImJvcmRlclJhZGl1cyI6IjBweCIsIl9tZXRhIjp7Imh0bWxJRCI6InVfY29sdW1uXzgiLCJodG1sQ2xhc3NOYW1lcyI6InVfY29sdW1uIn19fV0sInZhbHVlcyI6eyJkaXNwbGF5Q29uZGl0aW9uIjpudWxsLCJjb2x1bW5zIjpmYWxzZSwiYmFja2dyb3VuZENvbG9yIjoiI2YwZjBmMCIsImNvbHVtbnNCYWNrZ3JvdW5kQ29sb3IiOiIjMTgxNjNkIiwiYmFja2dyb3VuZEltYWdlIjp7InVybCI6IiIsImZ1bGxXaWR0aCI6dHJ1ZSwicmVwZWF0Ijoibm8tcmVwZWF0Iiwic2l6ZSI6ImN1c3RvbSIsInBvc2l0aW9uIjoiY2VudGVyIn0sInBhZGRpbmciOiIwcHgiLCJhbmNob3IiOiIiLCJoaWRlRGVza3RvcCI6ZmFsc2UsIl9tZXRhIjp7Imh0bWxJRCI6InVfcm93XzgiLCJodG1sQ2xhc3NOYW1lcyI6InVfcm93In0sInNlbGVjdGFibGUiOnRydWUsImRyYWdnYWJsZSI6dHJ1ZSwiZHVwbGljYXRhYmxlIjp0cnVlLCJkZWxldGFibGUiOnRydWUsImhpZGVhYmxlIjp0cnVlfX0seyJpZCI6IlZoVVNpUGtQcUoiLCJjZWxscyI6WzFdLCJjb2x1bW5zIjpbeyJpZCI6IjRUcUZidDRLYk8iLCJjb250ZW50cyI6W3siaWQiOiJ0QTJwb2VnMHVkIiwidHlwZSI6ImltYWdlIiwidmFsdWVzIjp7ImNvbnRhaW5lclBhZGRpbmciOiIzcHgiLCJhbmNob3IiOiIiLCJzcmMiOnsidXJsIjoiaHR0cHM6Ly9zaGFyZTEuY2xvdWRocS1ta3QzLm5ldC8yNjViYjg4ODA1N2U3My5wbmciLCJ3aWR0aCI6MTA4MCwiaGVpZ2h0IjoxMDgwLCJhdXRvV2lkdGgiOmZhbHNlLCJtYXhXaWR0aCI6IjE1JSJ9LCJ0ZXh0QWxpZ24iOiJjZW50ZXIiLCJhbHRUZXh0IjoiTmV4dXNBY2FkZW15IiwiYWN0aW9uIjp7Im5hbWUiOiJ3ZWIiLCJ2YWx1ZXMiOnsiaHJlZiI6IiIsInRhcmdldCI6Il9ibGFuayJ9fSwiaGlkZURlc2t0b3AiOmZhbHNlLCJkaXNwbGF5Q29uZGl0aW9uIjpudWxsLCJfbWV0YSI6eyJodG1sSUQiOiJ1X2NvbnRlbnRfaW1hZ2VfMjgiLCJodG1sQ2xhc3NOYW1lcyI6InVfY29udGVudF9pbWFnZSJ9LCJzZWxlY3RhYmxlIjp0cnVlLCJkcmFnZ2FibGUiOnRydWUsImR1cGxpY2F0YWJsZSI6dHJ1ZSwiZGVsZXRhYmxlIjp0cnVlLCJoaWRlYWJsZSI6dHJ1ZX19XSwidmFsdWVzIjp7ImJhY2tncm91bmRDb2xvciI6IiMxODE2M2QiLCJwYWRkaW5nIjoiMHB4IiwiYm9yZGVyIjp7fSwiYm9yZGVyUmFkaXVzIjoiMHB4IiwiX21ldGEiOnsiaHRtbElEIjoidV9jb2x1bW5fMjEiLCJodG1sQ2xhc3NOYW1lcyI6InVfY29sdW1uIn19fV0sInZhbHVlcyI6eyJkaXNwbGF5Q29uZGl0aW9uIjpudWxsLCJjb2x1bW5zIjpmYWxzZSwiYmFja2dyb3VuZENvbG9yIjoiIiwiY29sdW1uc0JhY2tncm91bmRDb2xvciI6IiIsImJhY2tncm91bmRJbWFnZSI6eyJ1cmwiOiIiLCJmdWxsV2lkdGgiOnRydWUsInJlcGVhdCI6Im5vLXJlcGVhdCIsInNpemUiOiJjdXN0b20iLCJwb3NpdGlvbiI6ImNlbnRlciJ9LCJwYWRkaW5nIjoiMHB4IiwiYW5jaG9yIjoiIiwiaGlkZURlc2t0b3AiOmZhbHNlLCJfbWV0YSI6eyJodG1sSUQiOiJ1X3Jvd18xNyIsImh0bWxDbGFzc05hbWVzIjoidV9yb3cifSwic2VsZWN0YWJsZSI6dHJ1ZSwiZHJhZ2dhYmxlIjp0cnVlLCJkdXBsaWNhdGFibGUiOnRydWUsImRlbGV0YWJsZSI6dHJ1ZSwiaGlkZWFibGUiOnRydWV9fSx7ImlkIjoidjQyRW5oemNmNSIsImNlbGxzIjpbMV0sImNvbHVtbnMiOlt7ImlkIjoiRWdxLWxRaDRObyIsImNvbnRlbnRzIjpbeyJpZCI6IkViTHQ3YmJidkEiLCJ0eXBlIjoiZGl2aWRlciIsInZhbHVlcyI6eyJ3aWR0aCI6IjEwMCUiLCJib3JkZXIiOnsiYm9yZGVyVG9wV2lkdGgiOiIxcHgiLCJib3JkZXJUb3BTdHlsZSI6InNvbGlkIiwiYm9yZGVyVG9wQ29sb3IiOiIjQkJCQkJCIn0sInRleHRBbGlnbiI6ImNlbnRlciIsImNvbnRhaW5lclBhZGRpbmciOiIxMHB4IiwiYW5jaG9yIjoiIiwiaGlkZURlc2t0b3AiOmZhbHNlLCJkaXNwbGF5Q29uZGl0aW9uIjpudWxsLCJfbWV0YSI6eyJodG1sSUQiOiJ1X2NvbnRlbnRfZGl2aWRlcl8xIiwiaHRtbENsYXNzTmFtZXMiOiJ1X2NvbnRlbnRfZGl2aWRlciJ9LCJzZWxlY3RhYmxlIjp0cnVlLCJkcmFnZ2FibGUiOnRydWUsImR1cGxpY2F0YWJsZSI6dHJ1ZSwiZGVsZXRhYmxlIjp0cnVlLCJoaWRlYWJsZSI6dHJ1ZX19LHsiaWQiOiJHS2lxOXZabmtxIiwidHlwZSI6ImhlYWRpbmciLCJ2YWx1ZXMiOnsiY29udGFpbmVyUGFkZGluZyI6IjMwcHggMTAwcHggMTBweCAzMHB4IiwiYW5jaG9yIjoiIiwiaGVhZGluZ1R5cGUiOiJoMSIsImZvbnRGYW1pbHkiOnsibGFiZWwiOiJPcGVuIFNhbnMiLCJ2YWx1ZSI6IidPcGVuIFNhbnMnLHNhbnMtc2VyaWYiLCJ1cmwiOiJodHRwczovL2ZvbnRzLmdvb2dsZWFwaXMuY29tL2Nzcz9mYW1pbHk9T3BlbitTYW5zOjQwMCw3MDAiLCJkZWZhdWx0Rm9udCI6dHJ1ZSwid2VpZ2h0cyI6bnVsbH0sImZvbnRXZWlnaHQiOjcwMCwiZm9udFNpemUiOiIxNHB4IiwidGV4dEFsaWduIjoibGVmdCIsImxpbmVIZWlnaHQiOiIxNDAlIiwibGlua1N0eWxlIjp7ImluaGVyaXQiOnRydWUsImxpbmtDb2xvciI6IiMwMDAwZWUiLCJsaW5rSG92ZXJDb2xvciI6IiMwMDAwZWUiLCJsaW5rVW5kZXJsaW5lIjp0cnVlLCJsaW5rSG92ZXJVbmRlcmxpbmUiOnRydWUsImJvZHkiOmZhbHNlfSwiaGlkZURlc2t0b3AiOmZhbHNlLCJkaXNwbGF5Q29uZGl0aW9uIjpudWxsLCJfbWV0YSI6eyJodG1sSUQiOiJ1X2NvbnRlbnRfaGVhZGluZ18xNyIsImh0bWxDbGFzc05hbWVzIjoidV9jb250ZW50X2hlYWRpbmcifSwic2VsZWN0YWJsZSI6dHJ1ZSwiZHJhZ2dhYmxlIjp0cnVlLCJkdXBsaWNhdGFibGUiOnRydWUsImRlbGV0YWJsZSI6dHJ1ZSwiaGlkZWFibGUiOnRydWUsInRleHQiOiI8cD5EZWFyIFBhcmVudHMsPC9wPiJ9fSx7ImlkIjoiQTAxMmJpUzE4bCIsInR5cGUiOiJoZWFkaW5nIiwidmFsdWVzIjp7ImNvbnRhaW5lclBhZGRpbmciOiIxMHB4IDcwcHggMzBweCAzMHB4IiwiYW5jaG9yIjoiIiwiaGVhZGluZ1R5cGUiOiJoMSIsImZvbnRGYW1pbHkiOnsibGFiZWwiOiJPcGVuIFNhbnMiLCJ2YWx1ZSI6IidPcGVuIFNhbnMnLHNhbnMtc2VyaWYiLCJ1cmwiOiJodHRwczovL2ZvbnRzLmdvb2dsZWFwaXMuY29tL2Nzcz9mYW1pbHk9T3BlbitTYW5zOjQwMCw3MDAiLCJkZWZhdWx0Rm9udCI6dHJ1ZSwid2VpZ2h0cyI6bnVsbH0sImZvbnRTaXplIjoiMTRweCIsInRleHRBbGlnbiI6ImxlZnQiLCJsaW5lSGVpZ2h0IjoiMTMwJSIsImxpbmtTdHlsZSI6eyJpbmhlcml0Ijp0cnVlLCJsaW5rQ29sb3IiOiIjMDAwMGVlIiwibGlua0hvdmVyQ29sb3IiOiIjMDAwMGVlIiwibGlua1VuZGVybGluZSI6dHJ1ZSwibGlua0hvdmVyVW5kZXJsaW5lIjp0cnVlLCJib2R5IjpmYWxzZX0sImhpZGVEZXNrdG9wIjpmYWxzZSwiZGlzcGxheUNvbmRpdGlvbiI6bnVsbCwiX21ldGEiOnsiaHRtbElEIjoidV9jb250ZW50X2hlYWRpbmdfMTgiLCJodG1sQ2xhc3NOYW1lcyI6InVfY29udGVudF9oZWFkaW5nIn0sInNlbGVjdGFibGUiOnRydWUsImRyYWdnYWJsZSI6dHJ1ZSwiZHVwbGljYXRhYmxlIjp0cnVlLCJkZWxldGFibGUiOnRydWUsImhpZGVhYmxlIjp0cnVlLCJ0ZXh0IjoiPHAgc3R5bGU9XCJsaW5lLWhlaWdodDogMTMwJTtcIj5BcyB0aGUgaG9saWRheSBzZWFzb24gYXBwcm9hY2hlcywgSSB3YW50ZWQgdG8gdGFrZSBhIG1vbWVudCB0byBleHByZXNzIG15IHdhcm1lc3Qgd2lzaGVzIHRvIHlvdSBhbmQgeW91ciBmYW1pbGllcy4gSXQgaGFzIGJlZW4gYSBwbGVhc3VyZSB0byB3b3JrIHdpdGggeW91ciBjaGlsZHJlbiB0aGlzIHllYXIsIGFuZCBJIGFtIGdyYXRlZnVsIGZvciB0aGUgb3Bwb3J0dW5pdHkgdG8gYmUgYSBwYXJ0IG9mIHRoZWlyIGVkdWNhdGlvbmFsIGpvdXJuZXkuPGJyIC8+PGJyIC8+PC9wPlxuPHAgc3R5bGU9XCJsaW5lLWhlaWdodDogMTMwJTtcIj5UaGFuayB5b3UgZm9yIHlvdXIgcGFydG5lcnNoaXAgYW5kIGludm9sdmVtZW50IGluIHlvdXIgY2hpbGQncyBlZHVjYXRpb24uIFlvdXIgc3VwcG9ydCBpcyBpbnZhbHVhYmxlLCBhbmQgdG9nZXRoZXIsIHdlIGNhbiBtYWtlIGEgcG9zaXRpdmUgaW1wYWN0IG9uIHRoZWlyIGFjYWRlbWljIHN1Y2Nlc3MuPGJyIC8+PGJyIC8+PC9wPlxuPHAgc3R5bGU9XCJsaW5lLWhlaWdodDogMTMwJTtcIj5NYXkgdGhlIGhvbGlkYXkgc2Vhc29uIGJyaW5nIHlvdSBwZWFjZSwgam95LCBhbmQgY2hlcmlzaGVkIG1vbWVudHMgd2l0aCB5b3VyIGxvdmVkIG9uZXMuIEkgbG9vayBmb3J3YXJkIHRvIHNlZWluZyBhbGwgdGhlIGJyaWdodCBmYWNlcyBiYWNrIGluIHRoZSBjbGFzc3Jvb20gaW4gdGhlIE5ldyBZZWFyLCByZWFkeSBmb3IgbmV3IGFkdmVudHVyZXMgYW5kIGRpc2NvdmVyaWVzLjwvcD4iLCJfb3ZlcnJpZGUiOnsibW9iaWxlIjp7ImNvbnRhaW5lclBhZGRpbmciOiIwcHggMzBweCAxMHB4IiwiZm9udFNpemUiOiIxNXB4In19fX0seyJpZCI6IkhIZk9DNUtKem0iLCJ0eXBlIjoiaGVhZGluZyIsInZhbHVlcyI6eyJjb250YWluZXJQYWRkaW5nIjoiMTBweCAxMDBweCAzcHggMzBweCIsImFuY2hvciI6IiIsImhlYWRpbmdUeXBlIjoiaDEiLCJmb250RmFtaWx5Ijp7ImxhYmVsIjoiT3BlbiBTYW5zIiwidmFsdWUiOiInT3BlbiBTYW5zJyxzYW5zLXNlcmlmIiwidXJsIjoiaHR0cHM6Ly9mb250cy5nb29nbGVhcGlzLmNvbS9jc3M/ZmFtaWx5PU9wZW4rU2Fuczo0MDAsNzAwIiwiZGVmYXVsdEZvbnQiOnRydWUsIndlaWdodHMiOm51bGx9LCJmb250V2VpZ2h0Ijo3MDAsImZvbnRTaXplIjoiMTRweCIsInRleHRBbGlnbiI6ImxlZnQiLCJsaW5lSGVpZ2h0IjoiMTIwJSIsImxpbmtTdHlsZSI6eyJpbmhlcml0Ijp0cnVlLCJsaW5rQ29sb3IiOiIjMDAwMGVlIiwibGlua0hvdmVyQ29sb3IiOiIjMDAwMGVlIiwibGlua1VuZGVybGluZSI6dHJ1ZSwibGlua0hvdmVyVW5kZXJsaW5lIjp0cnVlLCJib2R5IjpmYWxzZX0sImhpZGVEZXNrdG9wIjpmYWxzZSwiZGlzcGxheUNvbmRpdGlvbiI6bnVsbCwiX21ldGEiOnsiaHRtbElEIjoidV9jb250ZW50X2hlYWRpbmdfMTkiLCJodG1sQ2xhc3NOYW1lcyI6InVfY29udGVudF9oZWFkaW5nIn0sInNlbGVjdGFibGUiOnRydWUsImRyYWdnYWJsZSI6dHJ1ZSwiZHVwbGljYXRhYmxlIjp0cnVlLCJkZWxldGFibGUiOnRydWUsImhpZGVhYmxlIjp0cnVlLCJ0ZXh0IjoiPHAgc3R5bGU9XCJsaW5lLWhlaWdodDogMTIwJTtcIj5IYXBweSBOZXcgWWVhciw8L3A+IiwiX292ZXJyaWRlIjp7Im1vYmlsZSI6eyJmb250U2l6ZSI6IjE2cHgifX19fSx7ImlkIjoiYzdPX3FxVGhUdSIsInR5cGUiOiJoZWFkaW5nIiwidmFsdWVzIjp7ImNvbnRhaW5lclBhZGRpbmciOiI2cHggMTAwcHggMzBweCAzMHB4IiwiYW5jaG9yIjoiIiwiaGVhZGluZ1R5cGUiOiJoMSIsImZvbnRGYW1pbHkiOnsibGFiZWwiOiJPcGVuIFNhbnMiLCJ2YWx1ZSI6IidPcGVuIFNhbnMnLHNhbnMtc2VyaWYiLCJ1cmwiOiJodHRwczovL2ZvbnRzLmdvb2dsZWFwaXMuY29tL2Nzcz9mYW1pbHk9T3BlbitTYW5zOjQwMCw3MDAiLCJkZWZhdWx0Rm9udCI6dHJ1ZSwid2VpZ2h0cyI6bnVsbH0sImZvbnRXZWlnaHQiOjQwMCwiZm9udFNpemUiOiIxNHB4IiwidGV4dEFsaWduIjoibGVmdCIsImxpbmVIZWlnaHQiOiIxMzAlIiwibGlua1N0eWxlIjp7ImluaGVyaXQiOnRydWUsImxpbmtDb2xvciI6IiMwMDAwZWUiLCJsaW5rSG92ZXJDb2xvciI6IiMwMDAwZWUiLCJsaW5rVW5kZXJsaW5lIjp0cnVlLCJsaW5rSG92ZXJVbmRlcmxpbmUiOnRydWUsImJvZHkiOmZhbHNlfSwiaGlkZURlc2t0b3AiOmZhbHNlLCJkaXNwbGF5Q29uZGl0aW9uIjpudWxsLCJfbWV0YSI6eyJodG1sSUQiOiJ1X2NvbnRlbnRfaGVhZGluZ18yMCIsImh0bWxDbGFzc05hbWVzIjoidV9jb250ZW50X2hlYWRpbmcifSwic2VsZWN0YWJsZSI6dHJ1ZSwiZHJhZ2dhYmxlIjp0cnVlLCJkdXBsaWNhdGFibGUiOnRydWUsImRlbGV0YWJsZSI6dHJ1ZSwiaGlkZWFibGUiOnRydWUsInRleHQiOiI8cCBzdHlsZT1cImxpbmUtaGVpZ2h0OiAxMzAlO1wiPkRyLiBBbWVsaWEgUGFya2VyPGJyIC8+SGVhZCBvZiBTY2hvb2w8L3A+IiwiX292ZXJyaWRlIjp7Im1vYmlsZSI6eyJmb250U2l6ZSI6IjE1cHgifX19fV0sInZhbHVlcyI6eyJiYWNrZ3JvdW5kQ29sb3IiOiIjZmZmZmZmIiwicGFkZGluZyI6IjBweCIsImJvcmRlciI6e30sImJvcmRlclJhZGl1cyI6IjBweCIsIl9tZXRhIjp7Imh0bWxJRCI6InVfY29sdW1uXzEwIiwiaHRtbENsYXNzTmFtZXMiOiJ1X2NvbHVtbiJ9fX1dLCJ2YWx1ZXMiOnsiZGlzcGxheUNvbmRpdGlvbiI6bnVsbCwiY29sdW1ucyI6ZmFsc2UsImJhY2tncm91bmRDb2xvciI6IiNmMGYwZjAiLCJjb2x1bW5zQmFja2dyb3VuZENvbG9yIjoiIzE4MTYzZCIsImJhY2tncm91bmRJbWFnZSI6eyJ1cmwiOiIiLCJmdWxsV2lkdGgiOnRydWUsInJlcGVhdCI6Im5vLXJlcGVhdCIsInNpemUiOiJjdXN0b20iLCJwb3NpdGlvbiI6ImNlbnRlciJ9LCJwYWRkaW5nIjoiMHB4IiwiYW5jaG9yIjoiIiwiaGlkZURlc2t0b3AiOmZhbHNlLCJfbWV0YSI6eyJodG1sSUQiOiJ1X3Jvd18xMCIsImh0bWxDbGFzc05hbWVzIjoidV9yb3cifSwic2VsZWN0YWJsZSI6dHJ1ZSwiZHJhZ2dhYmxlIjp0cnVlLCJkdXBsaWNhdGFibGUiOnRydWUsImRlbGV0YWJsZSI6dHJ1ZSwiaGlkZWFibGUiOnRydWV9fSx7ImlkIjoiblNZQUNIV09BOCIsImNlbGxzIjpbMV0sImNvbHVtbnMiOlt7ImlkIjoib1EyS05PbFFLNyIsImNvbnRlbnRzIjpbeyJpZCI6IjBScDNqN2Q5MWwiLCJ0eXBlIjoiaGVhZGluZyIsInZhbHVlcyI6eyJjb250YWluZXJQYWRkaW5nIjoiMjhweCAxMHB4IDEwcHgiLCJhbmNob3IiOiIiLCJoZWFkaW5nVHlwZSI6ImgxIiwiZm9udEZhbWlseSI6eyJsYWJlbCI6Ikdlb3JnaWEiLCJ2YWx1ZSI6Imdlb3JnaWEscGFsYXRpbm8iLCJ1cmwiOiIiLCJkZWZhdWx0Rm9udCI6dHJ1ZSwid2VpZ2h0cyI6bnVsbH0sImZvbnRXZWlnaHQiOjQwMCwiZm9udFNpemUiOiIxNnB4IiwiY29sb3IiOiIjZThiMjQ1IiwidGV4dEFsaWduIjoiY2VudGVyIiwibGluZUhlaWdodCI6IjE0MCUiLCJsaW5rU3R5bGUiOnsiaW5oZXJpdCI6dHJ1ZSwibGlua0NvbG9yIjoiIzAwMDBlZSIsImxpbmtIb3ZlckNvbG9yIjoiIzAwMDBlZSIsImxpbmtVbmRlcmxpbmUiOnRydWUsImxpbmtIb3ZlclVuZGVybGluZSI6dHJ1ZX0sImhpZGVEZXNrdG9wIjpmYWxzZSwiZGlzcGxheUNvbmRpdGlvbiI6bnVsbCwiX21ldGEiOnsiaHRtbElEIjoidV9jb250ZW50X2hlYWRpbmdfMjUiLCJodG1sQ2xhc3NOYW1lcyI6InVfY29udGVudF9oZWFkaW5nIn0sInNlbGVjdGFibGUiOnRydWUsImRyYWdnYWJsZSI6dHJ1ZSwiZHVwbGljYXRhYmxlIjp0cnVlLCJkZWxldGFibGUiOnRydWUsImhpZGVhYmxlIjp0cnVlLCJ0ZXh0IjoiPGRpdj5cbjxkaXY+XG48ZGl2PlxuPGRpdj5cbjxkaXYgZGF0YS10ZXN0aWQ9XCJjb252ZXJzYXRpb24tdHVybi0xN1wiPlxuPGRpdj5cbjxkaXY+XG48ZGl2PlxuPGRpdj5cbjxkaXY+XG48ZGl2IGRhdGEtbWVzc2FnZS1hdXRob3Itcm9sZT1cImFzc2lzdGFudFwiIGRhdGEtbWVzc2FnZS1pZD1cImIyYjkyM2QzLTIxYzYtNGU5ZS1hYjJiLWQzYTYxMzcwYjdmMVwiPlxuPGRpdj5cbjxwPk5FWFVTIEFDQURFTVkgT1JHPC9wPlxuPC9kaXY+XG48L2Rpdj5cbjwvZGl2PlxuPC9kaXY+XG48L2Rpdj5cbjwvZGl2PlxuPC9kaXY+XG48L2Rpdj5cbjwvZGl2PlxuPC9kaXY+XG48L2Rpdj5cbjwvZGl2PiIsIl9vdmVycmlkZSI6eyJtb2JpbGUiOnsiZm9udFNpemUiOiIxNnB4IiwiY29udGFpbmVyUGFkZGluZyI6IjIxcHggNXB4IDEwcHgifX19fSx7ImlkIjoidmN4LTA4V20zcCIsInR5cGUiOiJoZWFkaW5nIiwidmFsdWVzIjp7ImNvbnRhaW5lclBhZGRpbmciOiIwcHggMTBweCAxMHB4IiwiYW5jaG9yIjoiIiwiaGVhZGluZ1R5cGUiOiJoMSIsImZvbnRGYW1pbHkiOnsibGFiZWwiOiJPcGVuIFNhbnMiLCJ2YWx1ZSI6IidPcGVuIFNhbnMnLHNhbnMtc2VyaWYiLCJ1cmwiOiJodHRwczovL2ZvbnRzLmdvb2dsZWFwaXMuY29tL2Nzcz9mYW1pbHk9T3BlbitTYW5zOjQwMCw3MDAiLCJkZWZhdWx0Rm9udCI6dHJ1ZSwid2VpZ2h0cyI6bnVsbH0sImZvbnRXZWlnaHQiOjQwMCwiZm9udFNpemUiOiIxMHB4IiwiY29sb3IiOiIjZmZmZmZmIiwidGV4dEFsaWduIjoiY2VudGVyIiwibGluZUhlaWdodCI6IjE0MCUiLCJsaW5rU3R5bGUiOnsiaW5oZXJpdCI6dHJ1ZSwibGlua0NvbG9yIjoiIzAwMDBlZSIsImxpbmtIb3ZlckNvbG9yIjoiIzAwMDBlZSIsImxpbmtVbmRlcmxpbmUiOnRydWUsImxpbmtIb3ZlclVuZGVybGluZSI6dHJ1ZX0sImhpZGVEZXNrdG9wIjpmYWxzZSwiZGlzcGxheUNvbmRpdGlvbiI6bnVsbCwiX21ldGEiOnsiaHRtbElEIjoidV9jb250ZW50X2hlYWRpbmdfMjYiLCJodG1sQ2xhc3NOYW1lcyI6InVfY29udGVudF9oZWFkaW5nIn0sInNlbGVjdGFibGUiOnRydWUsImRyYWdnYWJsZSI6dHJ1ZSwiZHVwbGljYXRhYmxlIjp0cnVlLCJkZWxldGFibGUiOnRydWUsImhpZGVhYmxlIjp0cnVlLCJ0ZXh0IjoiPGRpdiBkYXRhLXRlc3RpZD1cImNvbnZlcnNhdGlvbi10dXJuLTE3XCI+XG48ZGl2IGRhdGEtbWVzc2FnZS1hdXRob3Itcm9sZT1cImFzc2lzdGFudFwiIGRhdGEtbWVzc2FnZS1pZD1cImIyYjkyM2QzLTIxYzYtNGU5ZS1hYjJiLWQzYTYxMzcwYjdmMVwiPk9yZ2FuaXphY2nDs24gSnV2ZW5pbDxiciAvPk9EUyAwNCAmYW1wOyAxMDxiciAvPkxhbWJheWVxdWUsIFBlcsO6LjwvZGl2PlxuPC9kaXY+IiwiX292ZXJyaWRlIjp7Im1vYmlsZSI6eyJmb250U2l6ZSI6IjE0cHgifX19fSx7ImlkIjoiLVc2SjYwMTFfeiIsInR5cGUiOiJzb2NpYWwiLCJ2YWx1ZXMiOnsiY29udGFpbmVyUGFkZGluZyI6IjEwcHggMTBweCAyN3B4IiwiYW5jaG9yIjoiIiwiaWNvbnMiOnsiaWNvblR5cGUiOiJjaXJjbGUiLCJpY29ucyI6W3sibmFtZSI6Ikluc3RhZ3JhbSIsInVybCI6Imh0dHBzOi8vd3d3Lmluc3RhZ3JhbS5jb20vbmV4dXNhY2FkZW15LnBlLyJ9LHsibmFtZSI6IldoYXRzQXBwIiwidXJsIjoiaHR0cHM6Ly93YS5tZS81MTk4MjU5NjExOCJ9LHsibmFtZSI6IllvdVR1YmUiLCJ1cmwiOiJodHRwczovL3d3dy55b3V0dWJlLmNvbS9AbmV4dXNhY2FkZW15MTIifSx7Im5hbWUiOiJFbWFpbCIsInVybCI6Imh0dHBzOi8vZW1haWwuY29tL25leHVzYWNhZGVteS5wZUBnbWFpbC5jb20ifV0sImVkaXRvciI6eyJkYXRhIjp7InNob3dEZWZhdWx0SWNvbnMiOnRydWUsInNob3dEZWZhdWx0T3B0aW9ucyI6dHJ1ZSwiY3VzdG9tSWNvbnMiOltdLCJjdXN0b21PcHRpb25zIjpbXX19fSwiYWxpZ24iOiJjZW50ZXIiLCJzcGFjaW5nIjoyNSwiaGlkZURlc2t0b3AiOmZhbHNlLCJkaXNwbGF5Q29uZGl0aW9uIjpudWxsLCJfbWV0YSI6eyJodG1sSUQiOiJ1X2NvbnRlbnRfc29jaWFsXzMiLCJodG1sQ2xhc3NOYW1lcyI6InVfY29udGVudF9zb2NpYWwifSwic2VsZWN0YWJsZSI6dHJ1ZSwiZHJhZ2dhYmxlIjp0cnVlLCJkdXBsaWNhdGFibGUiOnRydWUsImRlbGV0YWJsZSI6dHJ1ZSwiaGlkZWFibGUiOnRydWV9fV0sInZhbHVlcyI6eyJiYWNrZ3JvdW5kQ29sb3IiOiIiLCJwYWRkaW5nIjoiMHB4IiwiYm9yZGVyIjp7fSwiYm9yZGVyUmFkaXVzIjoiMHB4IiwiX21ldGEiOnsiaHRtbElEIjoidV9jb2x1bW5fMTkiLCJodG1sQ2xhc3NOYW1lcyI6InVfY29sdW1uIn19fV0sInZhbHVlcyI6eyJkaXNwbGF5Q29uZGl0aW9uIjpudWxsLCJjb2x1bW5zIjpmYWxzZSwiYmFja2dyb3VuZENvbG9yIjoiI2YwZjBmMCIsImNvbHVtbnNCYWNrZ3JvdW5kQ29sb3IiOiIjMTgxNjNkIiwiYmFja2dyb3VuZEltYWdlIjp7InVybCI6IiIsImZ1bGxXaWR0aCI6dHJ1ZSwicmVwZWF0Ijoibm8tcmVwZWF0Iiwic2l6ZSI6ImN1c3RvbSIsInBvc2l0aW9uIjoiY2VudGVyIn0sInBhZGRpbmciOiIwcHgiLCJhbmNob3IiOiIiLCJoaWRlRGVza3RvcCI6ZmFsc2UsIl9tZXRhIjp7Imh0bWxJRCI6InVfcm93XzE1IiwiaHRtbENsYXNzTmFtZXMiOiJ1X3JvdyJ9LCJzZWxlY3RhYmxlIjp0cnVlLCJkcmFnZ2FibGUiOnRydWUsImR1cGxpY2F0YWJsZSI6dHJ1ZSwiZGVsZXRhYmxlIjp0cnVlLCJoaWRlYWJsZSI6dHJ1ZX19XSwiaGVhZGVycyI6W10sImZvb3RlcnMiOltdLCJ2YWx1ZXMiOnsicG9wdXBQb3NpdGlvbiI6ImNlbnRlciIsInBvcHVwV2lkdGgiOiI2MDBweCIsInBvcHVwSGVpZ2h0IjoiYXV0byIsImJvcmRlclJhZGl1cyI6IjEwcHgiLCJjb250ZW50QWxpZ24iOiJjZW50ZXIiLCJjb250ZW50VmVydGljYWxBbGlnbiI6ImNlbnRlciIsImNvbnRlbnRXaWR0aCI6IjYwMHB4IiwiZm9udEZhbWlseSI6eyJsYWJlbCI6IkNhYmluIiwidmFsdWUiOiInQ2FiaW4nLHNhbnMtc2VyaWYiLCJ1cmwiOiJodHRwczovL2ZvbnRzLmdvb2dsZWFwaXMuY29tL2Nzcz9mYW1pbHk9Q2FiaW46NDAwLDcwMCIsImRlZmF1bHRGb250Ijp0cnVlfSwidGV4dENvbG9yIjoiIzAwMDAwMCIsInBvcHVwQmFja2dyb3VuZENvbG9yIjoiI0ZGRkZGRiIsInBvcHVwQmFja2dyb3VuZEltYWdlIjp7InVybCI6IiIsImZ1bGxXaWR0aCI6dHJ1ZSwicmVwZWF0Ijoibm8tcmVwZWF0Iiwic2l6ZSI6ImNvdmVyIiwicG9zaXRpb24iOiJjZW50ZXIifSwicG9wdXBPdmVybGF5X2JhY2tncm91bmRDb2xvciI6InJnYmEoMCwgMCwgMCwgMC4xKSIsInBvcHVwQ2xvc2VCdXR0b25fcG9zaXRpb24iOiJ0b3AtcmlnaHQiLCJwb3B1cENsb3NlQnV0dG9uX2JhY2tncm91bmRDb2xvciI6IiNEREREREQiLCJwb3B1cENsb3NlQnV0dG9uX2ljb25Db2xvciI6IiMwMDAwMDAiLCJwb3B1cENsb3NlQnV0dG9uX2JvcmRlclJhZGl1cyI6IjBweCIsInBvcHVwQ2xvc2VCdXR0b25fbWFyZ2luIjoiMHB4IiwicG9wdXBDbG9zZUJ1dHRvbl9hY3Rpb24iOnsibmFtZSI6ImNsb3NlX3BvcHVwIiwiYXR0cnMiOnsib25DbGljayI6ImRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoJy51LXBvcHVwLWNvbnRhaW5lcicpLnN0eWxlLmRpc3BsYXkgPSAnbm9uZSc7In19LCJiYWNrZ3JvdW5kQ29sb3IiOiIjZjlmOWY5IiwicHJlaGVhZGVyVGV4dCI6IiIsImxpbmtTdHlsZSI6eyJib2R5Ijp0cnVlLCJsaW5rQ29sb3IiOiIjMGQwZGExIiwibGlua0hvdmVyQ29sb3IiOiIjMDAwMGVlIiwibGlua1VuZGVybGluZSI6dHJ1ZSwibGlua0hvdmVyVW5kZXJsaW5lIjp0cnVlLCJpbmhlcml0IjpmYWxzZX0sImJhY2tncm91bmRJbWFnZSI6eyJ1cmwiOiIiLCJmdWxsV2lkdGgiOnRydWUsInJlcGVhdCI6Im5vLXJlcGVhdCIsInNpemUiOiJjdXN0b20iLCJwb3NpdGlvbiI6InRvcC1jZW50ZXIiLCJjdXN0b21Qb3NpdGlvbiI6WyI1MCUiLCIwJSJdfSwiX21ldGEiOnsiaHRtbElEIjoidV9ib2R5IiwiaHRtbENsYXNzTmFtZXMiOiJ1X2JvZHkifX19LCJzY2hlbWFWZXJzaW9uIjoxNn0=">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="x-apple-disable-message-reformatting">
+  <!--[if !mso]><!--><meta http-equiv="X-UA-Compatible" content="IE=edge"><!--<![endif]-->
+  <title></title>
+  
+<!--[if !mso]><!--><link href="https://fonts.googleapis.com/css?family=Cabin:400,700" rel="stylesheet" type="text/css"><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet" type="text/css"><!--<![endif]-->
+
+</head>
+
+<body class="clean-body u_body" style="margin: 0;padding: 0;-webkit-text-size-adjust: 100%;background-color: #f9f9f9;color: #000000">
+  <table id="u_body" style="border-collapse: collapse;table-layout: fixed;border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;vertical-align: top;min-width: 320px;Margin: 0 auto;background-color: #f9f9f9;width:100%" cellpadding="0" cellspacing="0">
+  <tbody>
+  <tr style="vertical-align: top">
+    <td style="word-break: break-word;border-collapse: collapse !important;vertical-align: top">
+    
+  
+  
+<div class="u-row-container" style="padding: 0px;background-color: #f0f0f0">
+  <div class="u-row" style="margin: 0 auto;min-width: 320px;max-width: 600px;overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;background-color: #18163d;">
+    <div style="border-collapse: collapse;display: table;width: 100%;height: 100%;background-color: transparent;">
+<div class="u-col u-col-100" style="max-width: 320px;min-width: 600px;display: table-cell;vertical-align: top;">
+  <div style="height: 100%;width: 100% !important;border-radius: 0px;-webkit-border-radius: 0px; -moz-border-radius: 0px;">
+  <!--[if (!mso)&(!IE)]><!--><div style="box-sizing: border-box; height: 100%; padding: 0px;border-top: 0px solid transparent;border-left: 0px solid transparent;border-right: 0px solid transparent;border-bottom: 0px solid transparent;border-radius: 0px;-webkit-border-radius: 0px; -moz-border-radius: 0px;"><!--<![endif]-->
+  
+<table id="u_content_heading_22" style="font-family:'Cabin',sans-serif;" role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0">
+  <tbody>
+    <tr>
+      <td class="v-container-padding-padding" style="overflow-wrap:break-word;word-break:break-word;padding:28px 10px 10px;font-family:'Cabin',sans-serif;" align="left">
+        
+  <!--[if mso]><table width="100%"><tr><td><![endif]-->
+    <h1 class="v-font-size" style="margin: 0px; color: #ffffff; line-height: 140%; text-align: center; word-wrap: break-word; font-family: book antiqua,palatino; font-size: 19px; font-weight: 700;"><div>
+<div>
+<div>
+<div>
+<div data-testid="conversation-turn-17">
+<div>
+<div>
+<div>
+<div>
+<div>
+<div data-message-author-role="assistant" data-message-id="b2b923d3-21c6-4e9e-ab2b-d3a61370b7f1">
+<div>
+<p style="line-height: 140%; margin: 0px;">NEXUS ACADEMY</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div></h1>
+  <!--[if mso]></td></tr></table><![endif]-->
+
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table id="u_content_heading_15" style="font-family:'Cabin',sans-serif;" role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0">
+  <tbody>
+    <tr>
+      <td class="v-container-padding-padding" style="overflow-wrap:break-word;word-break:break-word;padding:0px 10px 10px;font-family:'Cabin',sans-serif;" align="left">
+        
+  <!--[if mso]><table width="100%"><tr><td><![endif]-->
+    <h1 class="v-font-size" style="margin: 0px; color: #ffffff; line-height: 140%; text-align: center; word-wrap: break-word; font-family: 'Open Sans',sans-serif; font-size: 10px; font-weight: 400;"><span><span></span></span></h1>
+  <!--[if mso]></td></tr></table><![endif]-->
+
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+  <!--[if (!mso)&(!IE)]><!--></div><!--<![endif]-->
+  </div>
+</div>
+<!--[if (mso)|(IE)]></td><![endif]-->
+      <!--[if (mso)|(IE)]></tr></table></td></tr></table><![endif]-->
+    </div>
+  </div>
+  </div>
+  
+
+
+  
+  
+<div class="u-row-container" style="padding: 0px;background-color: transparent">
+  <div class="u-row" style="margin: 0 auto;min-width: 320px;max-width: 600px;overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;background-color: transparent;">
+    <div style="border-collapse: collapse;display: table;width: 100%;height: 100%;background-color: transparent;">
+      <!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding: 0px;background-color: transparent;" align="center"><table cellpadding="0" cellspacing="0" border="0" style="width:600px;"><tr style="background-color: transparent;"><![endif]-->
+      
+<!--[if (mso)|(IE)]><td align="center" width="600" style="background-color: #18163d;width: 600px;padding: 0px;border-top: 0px solid transparent;border-left: 0px solid transparent;border-right: 0px solid transparent;border-bottom: 0px solid transparent;border-radius: 0px;-webkit-border-radius: 0px; -moz-border-radius: 0px;" valign="top"><![endif]-->
+<div class="u-col u-col-100" style="max-width: 320px;min-width: 600px;display: table-cell;vertical-align: top;">
+  <div style="background-color: #18163d;height: 100%;width: 100% !important;border-radius: 0px;-webkit-border-radius: 0px; -moz-border-radius: 0px;">
+  <!--[if (!mso)&(!IE)]><!--><div style="box-sizing: border-box; height: 100%; padding: 0px;border-top: 0px solid transparent;border-left: 0px solid transparent;border-right: 0px solid transparent;border-bottom: 0px solid transparent;border-radius: 0px;-webkit-border-radius: 0px; -moz-border-radius: 0px;"><!--<![endif]-->
+  
+<table style="font-family:'Cabin',sans-serif;" role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0">
+  <tbody>
+    <tr>
+      <td class="v-container-padding-padding" style="overflow-wrap:break-word;word-break:break-word;padding:3px;font-family:'Cabin',sans-serif;" align="left">
+        
+<table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tbody><tr>
+    <td style="padding-right: 0px;padding-left: 0px;" align="center">
+      
+      <img align="center" border="0" src="https://share1.cloudhq-mkt3.net/265bb888057e73.png" alt="NexusAcademy" title="NexusAcademy" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: inline-block !important;border: none;height: auto;float: none;width: 15%;max-width: 89.1px;" width="89.1">
+      
+    </td>
+  </tr>
+</tbody></table>
+
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+  <!--[if (!mso)&(!IE)]><!--></div><!--<![endif]-->
+  </div>
+</div>
+<!--[if (mso)|(IE)]></td><![endif]-->
+      <!--[if (mso)|(IE)]></tr></table></td></tr></table><![endif]-->
+    </div>
+  </div>
+  </div>
+  
+
+
+  
+  
+<div class="u-row-container" style="padding: 0px;background-color: #f0f0f0">
+  <div class="u-row" style="margin: 0 auto;min-width: 320px;max-width: 600px;overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;background-color: #18163d;">
+    <div style="border-collapse: collapse;display: table;width: 100%;height: 100%;background-color: transparent;">
+      <!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding: 0px;background-color: #f0f0f0;" align="center"><table cellpadding="0" cellspacing="0" border="0" style="width:600px;"><tr style="background-color: #18163d;"><![endif]-->
+      
+<!--[if (mso)|(IE)]><td align="center" width="600" style="background-color: #ffffff;width: 600px;padding: 0px;border-top: 0px solid transparent;border-left: 0px solid transparent;border-right: 0px solid transparent;border-bottom: 0px solid transparent;border-radius: 0px;-webkit-border-radius: 0px; -moz-border-radius: 0px;" valign="top"><![endif]-->
+<div class="u-col u-col-100" style="max-width: 320px;min-width: 600px;display: table-cell;vertical-align: top;">
+  <div style="background-color: #ffffff;height: 100%;width: 100% !important;border-radius: 0px;-webkit-border-radius: 0px; -moz-border-radius: 0px;">
+  <!--[if (!mso)&(!IE)]><!--><div style="box-sizing: border-box; height: 100%; padding: 0px;border-top: 0px solid transparent;border-left: 0px solid transparent;border-right: 0px solid transparent;border-bottom: 0px solid transparent;border-radius: 0px;-webkit-border-radius: 0px; -moz-border-radius: 0px;"><!--<![endif]-->
+  
+<table style="font-family:'Cabin',sans-serif;" role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0">
+  <tbody>
+    <tr>
+      <td class="v-container-padding-padding" style="overflow-wrap:break-word;word-break:break-word;padding:10px;font-family:'Cabin',sans-serif;" align="left">
+        
+  <table height="0px" align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse: collapse;table-layout: fixed;border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;vertical-align: top;border-top: 1px solid #BBBBBB;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%">
+    <tbody>
+      <tr style="vertical-align: top">
+        <td style="word-break: break-word;border-collapse: collapse !important;vertical-align: top;font-size: 0px;line-height: 0px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%">
+          <span>&nbsp;</span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table style="font-family:'Cabin',sans-serif;" role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0">
+  <tbody>
+    <tr>
+      <td class="v-container-padding-padding" style="overflow-wrap:break-word;word-break:break-word;padding:30px 100px 10px 30px;font-family:'Cabin',sans-serif;" align="left">
+        
+  <!--[if mso]><table width="100%"><tr><td><![endif]-->
+    <h1 class="v-font-size" style="margin: 0px; line-height: 140%; text-align: left; word-wrap: break-word; font-family: 'Open Sans',sans-serif; font-size: 14px; font-weight: 700;"><p style="margin: 0px;">Estimado/a {{name}} ,</p></h1>
+  <!--[if mso]></td></tr></table><![endif]-->
+
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table id="u_content_heading_18" style="font-family:'Cabin',sans-serif;" role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0">
+  <tbody>
+    <tr>
+      <td class="v-container-padding-padding" style="overflow-wrap:break-word;word-break:break-word;padding:10px 70px 30px 30px;font-family:'Cabin',sans-serif;" align="left">
+        
+  <!--[if mso]><table width="100%"><tr><td><![endif]-->
+    <h1 class="v-font-size" style="margin: 0px; line-height: 130%; text-align: left; word-wrap: break-word; font-family: 'Open Sans',sans-serif; font-size: 14px; font-weight: 400;"><p style="line-height: 130%; margin: 0px;">Le recordamos que tiene una reunión programada para el día {{date}} GMT-5, organizada por el equipo de {{field}}. Puede unirse a la reunión a través del siguiente enlace: <a href="{{link}}">{{link}} </a>
+      <br><br></p>
+<p style="line-height: 130%; margin: 0px;">Es importante que asista, ya que su participación será registrada en el sistema. En caso de no poder asistir, le pedimos que se comunique con el organizador de la reunión y justifique su ausencia.<br><br></p>
+<p style="line-height: 130%; margin: 0px;">Agradecemos su colaboración y esperamos contar con su presencia.</p></h1>
+  <!--[if mso]></td></tr></table><![endif]-->
+
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table id="u_content_heading_19" style="font-family:'Cabin',sans-serif;" role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0">
+  <tbody>
+    <tr>
+      <td class="v-container-padding-padding" style="overflow-wrap:break-word;word-break:break-word;padding:10px 100px 3px 30px;font-family:'Cabin',sans-serif;" align="left">
+        
+  <!--[if mso]><table width="100%"><tr><td><![endif]-->
+    <h1 class="v-font-size" style="margin: 0px; line-height: 120%; text-align: left; word-wrap: break-word; font-family: 'Open Sans',sans-serif; font-size: 14px; font-weight: 700;"><p style="line-height: 120%; margin: 0px;">{{organizer}}</p></h1>
+    <h1 class="v-font-size" style="margin: 0px; line-height: 130%; text-align: left; word-wrap: break-word; font-family: 'Open Sans',sans-serif; font-size: 14px; font-weight: 400;"><p style="line-height: 130%; margin: 0px;">{{field}} - {{position}}</p></h1>
+
+  <!--[if mso]></td></tr></table><![endif]-->
+
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table id="u_content_heading_20" style="font-family:'Cabin',sans-serif;" role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0">
+  <tbody>
+    <tr>
+      <td class="v-container-padding-padding" style="overflow-wrap:break-word;word-break:break-word;padding:6px 100px 30px 30px;font-family:'Cabin',sans-serif;" align="left">
+        
+  <!--[if mso]><table width="100%"><tr><td><![endif]-->
+    <h1 class="v-font-size" style="margin: 0px; line-height: 120%; text-align: left; word-wrap: break-word; font-family: 'Open Sans',sans-serif; font-size: 14px; font-weight: 700;"><p style="line-height: 120%; margin: 0px;">Nexus Academy</p></h1>
+
+    <!--[if mso]></td></tr></table><![endif]-->
+
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+  <!--[if (!mso)&(!IE)]><!--></div><!--<![endif]-->
+  </div>
+</div>
+<!--[if (mso)|(IE)]></td><![endif]-->
+      <!--[if (mso)|(IE)]></tr></table></td></tr></table><![endif]-->
+    </div>
+  </div>
+  </div>
+  
+
+
+  
+  
+<div class="u-row-container" style="padding: 0px;background-color: #f0f0f0">
+  <div class="u-row" style="margin: 0 auto;min-width: 320px;max-width: 600px;overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;background-color: #18163d;">
+    <div style="border-collapse: collapse;display: table;width: 100%;height: 100%;background-color: transparent;">
+      <!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding: 0px;background-color: #f0f0f0;" align="center"><table cellpadding="0" cellspacing="0" border="0" style="width:600px;"><tr style="background-color: #18163d;"><![endif]-->
+      
+<!--[if (mso)|(IE)]><td align="center" width="600" style="width: 600px;padding: 0px;border-top: 0px solid transparent;border-left: 0px solid transparent;border-right: 0px solid transparent;border-bottom: 0px solid transparent;border-radius: 0px;-webkit-border-radius: 0px; -moz-border-radius: 0px;" valign="top"><![endif]-->
+<div class="u-col u-col-100" style="max-width: 320px;min-width: 600px;display: table-cell;vertical-align: top;">
+  <div style="height: 100%;width: 100% !important;border-radius: 0px;-webkit-border-radius: 0px; -moz-border-radius: 0px;">
+  <!--[if (!mso)&(!IE)]><!--><div style="box-sizing: border-box; height: 100%; padding: 0px;border-top: 0px solid transparent;border-left: 0px solid transparent;border-right: 0px solid transparent;border-bottom: 0px solid transparent;border-radius: 0px;-webkit-border-radius: 0px; -moz-border-radius: 0px;"><!--<![endif]-->
+  
+<table id="u_content_heading_25" style="font-family:'Cabin',sans-serif;" role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0">
+  <tbody>
+    <tr>
+      <td class="v-container-padding-padding" style="overflow-wrap:break-word;word-break:break-word;padding:28px 10px 10px;font-family:'Cabin',sans-serif;" align="left">
+        
+  <!--[if mso]><table width="100%"><tr><td><![endif]-->
+    <h1 class="v-font-size" style="margin: 0px; color: #e8b245; line-height: 140%; text-align: center; word-wrap: break-word; font-family: georgia,palatino; font-size: 16px; font-weight: 400;"><div>
+<div>
+<div>
+<div>
+<div data-testid="conversation-turn-17">
+<div>
+<div>
+<div>
+<div>
+<div>
+<div data-message-author-role="assistant" data-message-id="b2b923d3-21c6-4e9e-ab2b-d3a61370b7f1">
+<div>
+<p style="margin: 0px;">NEXUS ACADEMY ORG</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div></h1>
+  <!--[if mso]></td></tr></table><![endif]-->
+
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table id="u_content_heading_26" style="font-family:'Cabin',sans-serif;" role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0">
+  <tbody>
+    <tr>
+      <td class="v-container-padding-padding" style="overflow-wrap:break-word;word-break:break-word;padding:0px 10px 10px;font-family:'Cabin',sans-serif;" align="left">
+        
+  <!--[if mso]><table width="100%"><tr><td><![endif]-->
+    <h1 class="v-font-size" style="margin: 0px; color: #ffffff; line-height: 140%; text-align: center; word-wrap: break-word; font-family: 'Open Sans',sans-serif; font-size: 10px; font-weight: 400;"><div data-testid="conversation-turn-17">
+<div data-message-author-role="assistant" data-message-id="b2b923d3-21c6-4e9e-ab2b-d3a61370b7f1">Organización Juvenil<br>ODS 04 &amp; 10<br>Lambayeque, Perú.</div>
+</div></h1>
+  <!--[if mso]></td></tr></table><![endif]-->
+
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table style="font-family:'Cabin',sans-serif;" role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0">
+  <tbody>
+    <tr>
+      <td class="v-container-padding-padding" style="overflow-wrap:break-word;word-break:break-word;padding:10px 10px 27px;font-family:'Cabin',sans-serif;" align="left">
+        
+<div align="center">
+  <div style="display: table; max-width:227px;">
+  <!--[if (mso)|(IE)]><table width="227" cellpadding="0" cellspacing="0" border="0"><tr><td style="border-collapse:collapse;" align="center"><table width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse; mso-table-lspace: 0pt;mso-table-rspace: 0pt; width:227px;"><tr><![endif]-->
+  
+    
+    <!--[if (mso)|(IE)]><td width="32" style="width:32px; padding-right: 25px;" valign="top"><![endif]-->
+    <table align="left" border="0" cellspacing="0" cellpadding="0" width="32" height="32" style="width: 32px !important;height: 32px !important;display: inline-block;border-collapse: collapse;table-layout: fixed;border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;vertical-align: top;margin-right: 25px">
+      <tbody><tr style="vertical-align: top"><td align="left" valign="middle" style="word-break: break-word;border-collapse: collapse !important;vertical-align: top">
+        <a href="https://www.instagram.com/nexusacademy.pe/" title="Instagram" target="_blank">
+          <img src="https://cdn.tools.unlayer.com/social/icons/circle/instagram.png" alt="Instagram" title="Instagram" width="32" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: block !important;border: none;height: auto;float: none;max-width: 32px !important">
+        </a>
+      </td></tr>
+    </tbody></table>
+    <!--[if (mso)|(IE)]></td><![endif]-->
+    
+    <!--[if (mso)|(IE)]><td width="32" style="width:32px; padding-right: 25px;" valign="top"><![endif]-->
+    <table align="left" border="0" cellspacing="0" cellpadding="0" width="32" height="32" style="width: 32px !important;height: 32px !important;display: inline-block;border-collapse: collapse;table-layout: fixed;border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;vertical-align: top;margin-right: 25px">
+      <tbody><tr style="vertical-align: top"><td align="left" valign="middle" style="word-break: break-word;border-collapse: collapse !important;vertical-align: top">
+        <a href="https://wa.me/51982596118" title="WhatsApp" target="_blank">
+          <img src="https://cdn.tools.unlayer.com/social/icons/circle/whatsapp.png" alt="WhatsApp" title="WhatsApp" width="32" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: block !important;border: none;height: auto;float: none;max-width: 32px !important">
+        </a>
+      </td></tr>
+    </tbody></table>
+    <!--[if (mso)|(IE)]></td><![endif]-->
+    
+    <!--[if (mso)|(IE)]><td width="32" style="width:32px; padding-right: 25px;" valign="top"><![endif]-->
+    <table align="left" border="0" cellspacing="0" cellpadding="0" width="32" height="32" style="width: 32px !important;height: 32px !important;display: inline-block;border-collapse: collapse;table-layout: fixed;border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;vertical-align: top;margin-right: 25px">
+      <tbody><tr style="vertical-align: top"><td align="left" valign="middle" style="word-break: break-word;border-collapse: collapse !important;vertical-align: top">
+        <a href="https://www.youtube.com/@nexusacademy12" title="YouTube" target="_blank">
+          <img src="https://cdn.tools.unlayer.com/social/icons/circle/youtube.png" alt="YouTube" title="YouTube" width="32" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: block !important;border: none;height: auto;float: none;max-width: 32px !important">
+        </a>
+      </td></tr>
+    </tbody></table>
+    <!--[if (mso)|(IE)]></td><![endif]-->
+    
+    <!--[if (mso)|(IE)]><td width="32" style="width:32px; padding-right: 0px;" valign="top"><![endif]-->
+    <table align="left" border="0" cellspacing="0" cellpadding="0" width="32" height="32" style="width: 32px !important;height: 32px !important;display: inline-block;border-collapse: collapse;table-layout: fixed;border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;vertical-align: top;margin-right: 0px">
+      <tbody><tr style="vertical-align: top"><td align="left" valign="middle" style="word-break: break-word;border-collapse: collapse !important;vertical-align: top">
+        <a href="https://email.com/nexusacademy.pe@gmail.com" title="Email" target="_blank">
+          <img src="https://cdn.tools.unlayer.com/social/icons/circle/email.png" alt="Email" title="Email" width="32" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: block !important;border: none;height: auto;float: none;max-width: 32px !important">
+        </a>
+      </td></tr>
+    </tbody></table>
+    <!--[if (mso)|(IE)]></td><![endif]-->
+    
+    
+    <!--[if (mso)|(IE)]></tr></table></td></tr></table><![endif]-->
+  </div>
+</div>
+
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+  <!--[if (!mso)&(!IE)]><!--></div><!--<![endif]-->
+  </div>
+</div>
+<!--[if (mso)|(IE)]></td><![endif]-->
+      <!--[if (mso)|(IE)]></tr></table></td></tr></table><![endif]-->
+    </div>
+  </div>
+  </div>
+  
+
+
+    <!--[if (mso)|(IE)]></td></tr></table><![endif]-->
+    </td>
+  </tr>
+  </tbody>
+  </table>
+  <!--[if mso]></div><![endif]-->
+  <!--[if IE]></div><![endif]-->
+
+
+
+</body></html>
