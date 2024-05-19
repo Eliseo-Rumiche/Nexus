@@ -25,9 +25,12 @@ from core.meetings.views.attendance_views import AttendanceView
 from core.authentication.views import Login, LogoutView, UserView
 from django.conf import settings
 from django.conf.urls.static import static
+from django.views.generic import RedirectView
 
 urlpatterns = [
     # path("admin/", admin.site.urls),
+    path('', RedirectView.as_view(pattern_name='meeting')),
+    
     path("worker/", WorkerView.as_view(), name="worker"),
     path("worker/<pk>", WorkerDetailView.as_view(), name="worker_detail"),
     path("position/", PositionView.as_view(), name="position"),

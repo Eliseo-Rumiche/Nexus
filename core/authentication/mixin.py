@@ -13,6 +13,6 @@ class LoginRequiredMixin(object):
 
         if self.permission : 
             if not  request.user.has_perm(self.permission):
-                return redirect(self.redirect_perm_url or 'user')
+                return redirect(self.redirect_perm_url or 'meeting')
                 
         return super().dispatch(request, *args, **kwargs)

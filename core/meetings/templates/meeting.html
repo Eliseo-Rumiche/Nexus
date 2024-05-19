@@ -1,5 +1,5 @@
 {% extends "layouts/list.html" %}
-
+{% load static %}
 {% block rows %}
     <th>id</th>
     <th>Nombre</th>
@@ -41,8 +41,12 @@
       </a>
       {% endif %}
 
+        <button type="button"  class="btn btn-icon btn-warning text-white btn_send_mail" data-id="{{meeting.pk}}">
+          <span class="tf-icons bx  bx-mail-send"></span> 
+        </button>
+
           <button type="button" class="btn btn-icon btn-info btn-edit" data-id="{{meeting.pk}}">
-            <span class="tf-icons bx bxs-edit"></span>
+            <span class="tf-icons bx bx-edit"></span>
           </button>
 
           <button type="button" class="btn btn-icon btn-danger btn-deleted" data-id="{{meeting.pk}}">
@@ -53,3 +57,7 @@
 {% endfor %}
 
 {% endblock columns %}
+
+{% block extra-scripts %}
+<script src="{% static 'js/meeting.js' %}" type="module" ></script>
+{% endblock extra-scripts %} 

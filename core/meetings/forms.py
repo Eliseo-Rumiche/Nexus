@@ -15,12 +15,6 @@ class DateTimeInput(forms.DateInput):
 
 class MeetingForm(forms.ModelForm):
 
-    send_notification = forms.BooleanField(
-        required=False,
-        widget=forms.Select(choices=select_choices),
-        label="Enviar Notificación (Email)",
-        help_text="",
-    )
     organizer = forms.ModelChoiceField(
         label="Organizador",
         queryset=Worker.objects.filter(
@@ -63,9 +57,6 @@ class MeetingForm(forms.ModelForm):
             attendance.meeting = meeting
             attendance.worker = worker
             attendance.save()
-
-            if self.cleaned_data["send_notification"]:
-                send_meeting_notification_by_email(attendance)
 
         return meeting
 

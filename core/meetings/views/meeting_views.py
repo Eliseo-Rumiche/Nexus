@@ -1,10 +1,11 @@
 from typing import Any
 from django.views.generic  import ListView
-from core.meetings.models import Meeting
+from core.meetings.models import Meeting, Attendance
 from core.meetings.forms import MeetingForm
 from django.http.response import JsonResponse
 from core.authentication.mixin import LoginRequiredMixin
 from core.authentication.utils import ValidatePermission
+from core.meetings.utils import send_meeting_notification_by_email
 
 class MeetingView(LoginRequiredMixin,ListView):
     template_name = "meeting.html"
@@ -48,6 +49,11 @@ class MeetingView(LoginRequiredMixin,ListView):
                 else:
                     data["error"] = form.errors
 
+            elif action == "send_mails":
+                # ValidatePermission("meetings.change_meeting",request)
+                atts = Attendance.objects.filter(meeting=request.POST["id"])
+                for att in atts:
+                    send_meeting_notification_by_email(att)  
             else:
                 raise Exception("accion no encontrada")
 
