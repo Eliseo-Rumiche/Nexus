@@ -84,7 +84,7 @@ WSGI_APPLICATION = "Nexus.wsgi.application"
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
-    'default': dj_database_url.config(env='DATABASE_URL', default='sqlite://../db.sqlite3')
+    'default': dj_database_url.config(env='DATABASE_URL', default=config("DATABASE_URL",'sqlite://../db.sqlite3'))
 }
 
 # Password validation
