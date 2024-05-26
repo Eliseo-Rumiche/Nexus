@@ -1,5 +1,6 @@
 {% extends "layouts/base.html" %} {% block head %}
 {% load static %}
+{% load crispy_forms_tags %}
 
 <link
   rel="stylesheet"
@@ -37,10 +38,13 @@
 
 <!-- Responsive Table -->
 <div class="card p-3">
-  <div class=" my-3">
+  <div class=" my-3 d-flex justify-content-between">
     <a type="button" href="{% url "meeting" %}" class="btn btn-secondary">
       <i class='bx bx-left-arrow-alt'></i> Regresar
     </a>
+
+    <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#Modal">Agregar</button>
+
   </div>
 
   {% comment %} <h5 class="card-header p-0 my-3">Asistencia : {{meeting.name}}</h5> {% endcomment %}
@@ -122,6 +126,44 @@
   </div>
 </div>
 <!--/ Responsive Table -->
+
+<div
+  class="modal fade"
+  id="Modal"
+  data-bs-backdrop="static"
+  tabindex="-1"
+  aria-hidden="true"
+  style="display: none"
+>
+  <div class="modal-dialog">
+    <form class="modal-content" id="modalform">
+      <div class="modal-header">
+        <h5 class="modal-title" id="backDropModalTitle">Agregar Asistentes:</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+
+        
+      </div>
+      <div class="modal-body">
+        <input type="hidden" name="action" id="action" value="add">
+        {% csrf_token %} {{form | crispy}}</div>
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="btn btn-outline-secondary"
+          data-bs-dismiss="modal"
+        >
+          Cancelar
+        </button>
+        <button type="submit" class="btn btn-primary">Guardar</button>
+      </div>
+    </form>
+  </div>
+</div>
 
 {% endblock content %}
 

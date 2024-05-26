@@ -1,7 +1,6 @@
 from django import forms
 from core.meetings.models import Meeting, Attendance
 from core.employee.models import Worker
-from core.meetings.utils import send_meeting_notification_by_email
 
 select_choices = (
     (0, "No"),
@@ -19,7 +18,7 @@ class MeetingForm(forms.ModelForm):
         label="Organizador",
         queryset=Worker.objects.filter(
             position__name__icontains="director", status=True
-        )
+        ),
     )
 
     class Meta:
@@ -67,3 +66,16 @@ class MeetingForm(forms.ModelForm):
         field = cleaned_data.get("field")
         if meeting_type == "A" and field == None:
             self.add_error("field", "Selecione área.")
+
+
+class AddAttendanceForm(forms.Form):
+
+    def __init__(self, *args, **kwargs):
+        self.meeting_pk = kwargs.pop("meeting_pk", None)
+        super().__init__(*args, **kwargs)
+        self.fields["workers"] = forms.ModelMultipleChoiceField(
+            label="Trabajadores",
+            queryset=Worker.objects.filter(status=True).exclude(
+                attendance__meeting__pk=self.meeting_pk
+            ),
+        )

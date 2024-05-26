@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 {% load static %}
 
+
 <html
   lang="en"
   class="light-style customizer-hide"
@@ -57,9 +58,9 @@
             <div class="card-body">
               <!-- Logo -->
               <div class="app-brand justify-content-center">
-                <a href="/" class="app-brand-link gap-2">
+                <a href="/" class="app-brand-link gap-2 flex-column">
                   <img width="25" src="{% static 'img/logo.svg' %}" >
-                  <span class="app-brand-text demo text-body fw-bolder">Nexus</span>
+                  <span class="app-brand-text demo text-body fw-bolder">Nexus Academy</span>
                 </a>
               </div>
               <!-- /Logo -->
@@ -71,20 +72,20 @@
                 {% csrf_token %}
                 <input type="hidden" name="next">
                 <div class="mb-3">
-                  <label for="email" class="form-label">Username</label>
+                  <label for="email" class="form-label">Nombre de usuario</label>
                   <input
                     type="text"
                     class="form-control"
                     id="email"
                     name="username"
-                    placeholder="username"
+                    placeholder="Nombre de usuario"
                     autofocus
                     required
                   />
                 </div>
                 <div class="mb-3 form-password-toggle">
                   <div class="d-flex justify-content-between">
-                    <label class="form-label" for="password">Password</label>
+                    <label class="form-label" for="password">Contraseña:</label>
 
                   </div>
                   <div class="input-group input-group-merge">
@@ -102,7 +103,7 @@
                 </div>
                 
                 <div class="mb-3">
-                  <button class="btn btn-primary d-grid w-100" type="submit">Sign in</button>
+                  <button class="btn btn-primary d-grid w-100" type="submit">Ingresar</button>
                 </div>
               </form>
             </div>

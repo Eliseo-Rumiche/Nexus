@@ -4,7 +4,8 @@
     <th>id</th>
     <th>Nombre</th>
     <th>Apellidos</th>
-    <th>Area</th>
+    <th>Área</th>
+    <th>Cargo</th>
     <th>Estado</th>
     <th>Opciones</th>
 
@@ -16,9 +17,10 @@
 
 <tr>
     <td>{{worker.pk}}</td>
-    <td>{{ worker.name}}</td>
+    <td>{{worker.name}}</td>
     <td>{{worker.last_name}}</td>
     <td>{{worker.field.name}}</td>
+    <td>{{worker.position.name}}</td>
 
 
     <td>

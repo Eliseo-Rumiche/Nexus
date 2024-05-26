@@ -7,6 +7,7 @@ $('input[type="radio"]').change(function (e) {
   let data = new FormData();
   data.append("worker", worker);
   data.append("status", status);
+  data.append("action", "set_attendance");
 
   send_for_ajax(location.pathname, data, (res) => {});
 });
