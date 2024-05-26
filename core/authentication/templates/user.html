@@ -1,7 +1,7 @@
 {% extends "layouts/list.html" %}
 
 {% block rows %}
-    <th>id</th>
+    <th>N°</th>
     <th>Nombre</th>
     <th>Apellidos</th>
     <th>Estado</th>    
@@ -14,7 +14,7 @@
 {% for user in users  %}
 
 <tr>
-    <td>{{user.pk}}</td>
+    <td>{{forloop.counter}}</td>
     <td>{{ user.first_name}}</td>
     <td>{{ user.last_name}}</td>
 

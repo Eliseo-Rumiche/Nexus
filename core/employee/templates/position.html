@@ -1,7 +1,7 @@
 {% extends "layouts/list.html" %}
 
 {% block rows %}
-    <th>id</th>
+    <th>N°</th>
     <th>Nombre</th>
     <th>Estado</th>
     <th>Opciones</th>
@@ -13,7 +13,7 @@
 {% for position in positions  %}
 
 <tr>
-    <td>{{position.pk}}</td>
+    <td>{{forloop.counter}}</td>
     <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>{{ position.name}}</strong></td>
 
 

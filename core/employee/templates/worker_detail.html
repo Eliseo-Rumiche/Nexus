@@ -7,7 +7,7 @@
 
 {% block content %}
 <div class="card mb-4">
-    <h5 class="card-header">Información Personal</h5>
+    <h5 class="card-header">Información Personal:</h5>
     <!-- Account -->
     <div class="card-body">
       <div class="d-flex flex-column justify-content-center align-items-center align-items-sm-center mb-3">
@@ -32,33 +32,33 @@
     <div class="card-body">
         <div class="row">
           <div class="mb-3 col-md-6">
-            <label for="firstName" class="form-label">Nombre Completo</label>
+            <label for="firstName" class="form-label">Nombre Completo:</label>
             <input class="form-control" type="text"value="{{worker.get_fullname}}" disabled>
           </div>
 
           
           <div class="mb-3 col-md-6">
-            <label for="firstName" class="form-label">Número Télefonico (Whatsapp)</label>
+            <label for="firstName" class="form-label">Número Teléfonico (Whatsapp):</label>
             <input class="form-control" type="text"value="{{worker.phone_number}}" disabled>
           </div>
 
           <div class="mb-3 col-md-6">
-            <label for="lastName" class="form-label">Email</label>
+            <label for="lastName" class="form-label">Email:</label>
             <input class="form-control" type="text" value="{{worker.email}}" disabled>
           </div>
 
           <div class="mb-3 col-md-6">
-            <label for="firstName" class="form-label">Fecha De Nacimiento</label>
+            <label for="firstName" class="form-label">Fecha De Nacimiento:</label>
             <input class="form-control" type="text"value="{{worker.birth_date}}" disabled>
           </div>
 
           <div class="mb-3 col-md-6">
-            <label for="lastName" class="form-label">área</label>
+            <label for="lastName" class="form-label">Área:</label>
             <input class="form-control" type="text" value="{{worker.field.name}}" disabled>
           </div>
 
           <div class="mb-3 col-md-6">
-            <label for="lastName" class="form-label">Cargo</label>
+            <label for="lastName" class="form-label">Cargo:</label>
             <input class="form-control" type="text" value="{{worker.position.name}}" disabled>
           </div> 
         </div>
@@ -74,7 +74,7 @@
       <div class="card h-100">
         <div class="card-header d-flex align-items-center justify-content-between pb-0">
           <div class="card-title mb-0">
-            <h5 class="m-0 me-2">Estadistica Asistencias</h5>
+            <h5 class="m-0 me-2">Estadística Asistencias</h5>
           </div>
         </div>
         <div class="card-body">
@@ -158,7 +158,7 @@
     <div class="col-md-6 col-lg-6 order-2 mb-4">
       <div class="card h-100">
         <div class="card-header d-flex align-items-center justify-content-between">
-          <h5 class="card-title m-0 me-2">Ultimas 6 asistencias</h5>
+          <h5 class="card-title m-0 me-2">Últimas 6 asistencias</h5>
         </div>
         <div class="card-body">
           <ul class="p-0 m-0">

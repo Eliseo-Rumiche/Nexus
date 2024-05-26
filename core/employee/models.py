@@ -45,7 +45,7 @@ class Worker(models.Model):
     )
     address = models.CharField("Dirección", max_length=50)
     phone_number = models.CharField(
-        "Número de Télefono", max_length=50, help_text="Ejm : +51 963852741"
+        "Número de Teléfono", max_length=50, help_text="Ejm : +51 963852741"
     )
     field = models.ForeignKey(Field, verbose_name="Área", on_delete=models.PROTECT)
     position = models.ForeignKey(
