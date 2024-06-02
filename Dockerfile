@@ -21,7 +21,7 @@ COPY . .
 ENV PYTHONUNBUFFERED 1
 ENV DJANGO_SETTINGS_MODULE=Nexus.settings
 
-# RUN python manage.py collectstatic
+RUN python manage.py collectstatic
 
 # EXPOSE 8080
 
