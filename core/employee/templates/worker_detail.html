@@ -80,8 +80,8 @@
         <div class="card-body">
           <div class="d-flex justify-content-between align-items-center mb-3">
             <div class="d-flex flex-column align-items-center gap-1">
-              <h2 class="mb-2">{{total_attendances}}</h2>
-              <span>Asistencias Totales</span>
+              <h2 class="mb-2"> {{present_attendances.count}}/{{total_attendances}}</h2>
+              <span>Asistencias Presentes</span>
             </div>
             <div id="attendanceDetailChart"></div>
           </div>
@@ -167,13 +167,16 @@
 
             <li class="d-flex mb-4 pb-1">
               <div class="avatar flex-shrink-0 me-3">
+
+                <a href="{{attendance.meeting.get_attendances_url}}">
+
                 {% if attendance.status == 'P' %}
                 <span class="avatar-initial rounded bg-label-success"
                   ><i class="bx bx-list-check"></i
                 ></span>
                 {% elif attendance.status == 'A' %}
-                <span class="avatar-initial rounded bg-label-success"
-                  ><i class="bx bx-list-check"></i
+                <span class="avatar-initial rounded bg-label-danger"
+                  ><i class="bx bx-list-minus"></i
                 ></span>
                 {% elif attendance.status == 'E' %}
                 <span class="avatar-initial rounded bg-label-warning"><i class="bx bxs-timer"></i></span>
@@ -182,7 +185,9 @@
                   ><i class="bx bxs-error-alt"></i
                 ></span>
                 {% endif %}
-                
+
+              </a>
+
               </div>
               <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
                 <div class="me-2">

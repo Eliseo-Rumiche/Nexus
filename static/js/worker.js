@@ -13,10 +13,10 @@ const chartOrderStatistics = document.querySelector("#attendanceDetailChart"),
     labels: labels_chart,
     series: series_chart,
     colors: [
-      config.colors.primary,
-      config.colors.secondary,
-      config.colors.info,
       config.colors.success,
+      config.colors.danger,
+      config.colors.info,
+      config.colors.secondary,
     ],
     stroke: {
       width: 5,
